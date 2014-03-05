@@ -1,0 +1,97 @@
+LOCUS       AM886138                 853 bp    DNA     linear   PRI 22-SEP-2007
+DEFINITION  Homo sapiens t(9;22)(q34;q11) translocation breakpoint sequence in
+            acute lymphoblastic leukemia, e13a3 transcript, BCR-ABL1 gene for
+            bcr-abl1 fusion protein.
+ACCESSION   AM886138
+VERSION     AM886138.1  GI:157676100
+KEYWORDS    ABL1 gene; BCR gene; bcr-abl1 fusion protein; BCR-ABL1 gene;
+            breakpoint cluster region protein; v-abl Abelson murine leukemia
+            viral oncogene homolog 1.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1
+  AUTHORS   Burmeister,T.
+  TITLE     Chromosomal breakpoints in ABL1 intron 3 in BCR-ABL1-positive
+            leukemia patients
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 853)
+  AUTHORS   Burmeister,T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-SEP-2007) Burmeister T., CBF, Medizinische Klinik
+            III, Charite Universitaetsmedizin Berlin, Hindenburgdamm 30, 12200
+            Berlin, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..853
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /isolate="patient no. 6365"
+                     /db_xref="taxon:9606"
+                     /chromosome="t(9;22)"
+                     /map="t(9;22)(q34;q11)"
+                     /cell_type="B-lymphoblast, acute lymphoblastic leukemia"
+     source          1..280
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="22"
+                     /map="22q11"
+     source          281..853
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="9"
+                     /map="9q34"
+     gene            order(<1..31,791..>853)
+                     /gene="BCR-ABL1"
+     mRNA            join(<1..31,791..>853)
+                     /gene="BCR-ABL1"
+                     /note="e13a3 transcript"
+     CDS             join(<1..31,791..>853)
+                     /gene="BCR-ABL1"
+                     /note="breakpoint cluster region protein-v-abl Abelson
+                     murine leukemia viral oncogene homolog 1 fusion protein"
+                     /codon_start=1
+                     /product="bcr-abl1 fusion protein"
+                     /protein_id="CAP08044.1"
+                     /db_xref="GI:157676101"
+                     /db_xref="GOA:A8E194"
+                     /db_xref="InterPro:IPR020685"
+                     /db_xref="InterPro:IPR020700"
+                     /db_xref="UniProtKB/TrEMBL:A8E194"
+                     /translation="HSIPLTINKEGEKLRVLGYNHNGEWCEAQTK"
+     gene            <1..>280
+                     /gene="BCR"
+     exon            <1..31
+                     /gene="BCR"
+                     /number=13
+     intron          32..>280
+                     /gene="BCR"
+                     /number=13
+     gene            <281..>853
+                     /gene="ABL1"
+     intron          <281..790
+                     /gene="ABL1"
+                     /number=2
+     exon            791..>853
+                     /gene="ABL1"
+                     /number=3
+ORIGIN      
+        1 cacagcattc cgctgaccat caacaaggaa ggtgggcccc ccccgtctcc gtgtacaggg
+       61 cacctgcagg gagggcaggc agctagcctg aaggctgatc cccccttcct gttagcactt
+      121 ttgatgggac tagtggactt tggttcagaa ggaagagcta tgcttgttag ggcctcttgt
+      181 ctcctcccag gagtggacaa ggtgggttag gagcagtttc tccctgagtg gctgctgctg
+      241 ggtggttgag gagatgcacg gcttctgttc ctagtcacaa ttgcggtttg acctaccacc
+      301 ctttgctcgt taaaggagca gctttgaaat ctggactgca gggatatcca aaacaacaac
+      361 tgcatgtttc taagggagtc gactctcctt agaggagttc ttgtacaata gccctgggca
+      421 aaaacagaac ttgccctatt ttttatactg aaaaggacag ctggacaaaa tactgaacgc
+      481 aatttttccc ctaagaaaaa gcattatttc cctaaaatgt cttatattag gaacagagca
+      541 cttgaataaa cataattgat ttataaaaac tgaggctata cacttaccta tctgttcagt
+      601 acaaacagga agcttcaaat gtaaacgtga attctcatac acttataaat gcatatcttt
+      661 atgtggactt gttaaaatga aattggtatt taggaatttg gagattttta gtagttacac
+      721 aagaatcaat gaaaaagaac gaagctggtt tccaaagctg atatgtctga tttggttcct
+      781 ttcttctcag gtgaaaagct ccgggtctta ggctataatc acaatgggga atggtgtgaa
+      841 gcccaaacca aaa
+//

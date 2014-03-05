@@ -1,0 +1,93 @@
+LOCUS       X85116                  1649 bp    DNA     linear   PRI 14-NOV-2006
+DEFINITION  H.sapiens epb72 gene exon 1.
+ACCESSION   X85116
+VERSION     X85116.1  GI:1161561
+KEYWORDS    EPB72 gene; integral membrane protein; stomatin.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1
+  AUTHORS   Unfried,I., Entler,B. and Prohaska,R.
+  TITLE     The organization of the gene (EPB72) encoding the human erythrocyte
+            band 7 integral membrane protein (protein 7.2b)
+  JOURNAL   Genomics 30 (3), 521-528 (1995)
+   PUBMED   8825639
+REFERENCE   2  (bases 1 to 1649)
+  AUTHORS   Unfried,I.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (03-MAR-1995) I. Unfried, Inst. of Biochemistry, Univ. of
+            Vienna, Vienna Biocenter, Dr. Bohrgasse 9/3, A- 1030 Vienna,
+            AUSTRIA
+COMMENT     Sequence overlapping with those under the acc#X60067 & M81635.
+FEATURES             Location/Qualifiers
+     source          1..1649
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="9"
+                     /map="q34.1"
+                     /clone_lib="Human placental library (Stratagene,#946203)"
+     mRNA            join(1286..1407,X85117.1:44..147,X85117.1:1527..1599,
+                     X85117.1:2897..2979,X85117.1:6876..7079,
+                     X85117.1:8050..8184,X85117.1:14790..17103)
+     exon            1286..1407
+                     /note="label:ex1"
+                     /number=1
+     gene            order(1347..1407,X85117.1:44..147,X85117.1:1527..1599,
+                     X85117.1:2897..2979,X85117.1:6876..7079,
+                     X85117.1:8050..8184,X85117.1:14790..14996)
+                     /gene="EPB72"
+     CDS             join(1347..1407,X85117.1:44..147,X85117.1:1527..1599,
+                     X85117.1:2897..2979,X85117.1:6876..7079,
+                     X85117.1:8050..8184,X85117.1:14790..14996)
+                     /gene="EPB72"
+                     /note="stomatin"
+                     /codon_start=1
+                     /product="band 7 integral membrane protein"
+                     /protein_id="CAA59436.1"
+                     /db_xref="GI:1161562"
+                     /db_xref="GDB:128993"
+                     /db_xref="GOA:P27105"
+                     /db_xref="HGNC:3383"
+                     /db_xref="InterPro:IPR001107"
+                     /db_xref="InterPro:IPR001972"
+                     /db_xref="InterPro:IPR018080"
+                     /db_xref="UniProtKB/Swiss-Prot:P27105"
+                     /translation="MAEKRHTRDSEAQRLPDSFKDSPSKGLGPCGWILVAFSFLFTVI
+                     TFPISIWMCIKIIKEYERAIIFRLGRILQGGAKGPGLFFILPCTDSFIKVDMRTISFD
+                     IPPQEILTKDSVTISVDGVVYYRVQNATLAVANITNADSATRLLAQTTLRNVLGTKNL
+                     SQILSDREEIAHNMQSTLDDATDAWGIKVERVEIKDVKLPVQLQRAMAAEAEASREAR
+                     AKVIAAEGEMNASRALKEASMVITESPAALQLRYLQTLTTIAAEKNSTIVFPLPIDML
+                     QGIIGAKHSHLG"
+ORIGIN      
+        1 actagttggg accgcaagca cacaccaccc cacctggcta tttttttttt actttttgta
+       61 gagatgggga cgtcaccatg caggccaggc atttaacatt taattggtaa ctcttcactc
+      121 caaaatgaac atgggttgta tgttacatgc atgtttgctc aatgggcatg cgtcaggacc
+      181 accctcatga atattcatag ctcctcctgt cacctgctga atatgcatgt ctacccaagc
+      241 tgttcagcat aaagccgcta ctccaacccc tcctccaacg aaatgcctgt ctctggtcct
+      301 ggccattctc cagcctgcgg aatggccacc ttgcaggctg taacccctta caagaaataa
+      361 agtctcctct cctgtttttt tgttttttgt tttgtttttt tgagacggag tctcgctctg
+      421 tcacccaggc catctcggct cactgcaacc tctgcctccc aagttcaagc gattctcctg
+      481 cctcagcctc ccaagtagct gggattacag gcgcgcgcca cacgcccggc taatttttgt
+      541 atttttagca gagacggggt ttcaccatgt tggccaagct ggtctcgaac ttctaacctc
+      601 agatgatcta cccgcctcgg ccttccaacg tgctgggatt acaggcgtga gccaccgcgc
+      661 ccggcctcct ctccttttcc aaatttatac attttgattt tcttaacaca cctcactcga
+      721 gttcgttcac ttcggctgcg gcgtgatctg ccggccctct cagctcaggc tgacctcagc
+      781 gccctcactt cggccacttc tgtgtccctc agtcttctcc cctcaactcg gacctcgcgc
+      841 cctcatgaca gggcgccatt ttcttccctc taactcctca gcccagagga ggcgccttgg
+      901 tcccgtacct ctgcccggca aggcgacttt tcttcacttg cacttttgcc tcgggtcatc
+      961 ctctgctgct acctccccac tatcctcacc atctgctcac gtcccgtggc ttccgccctc
+     1021 ccttccggtg cagggccccg gcctcatacc cacagccttg ggggctctcg cccctcaggc
+     1081 cacgcccctc aggccacgcc cctcagccca cagaactagc gggaagtgac tgcgaagcag
+     1141 tcgcgccgtg gagggacagg agggcgggga ttgggaggtg ggtcctcctc gatcctgggc
+     1201 gttgattggc caactctcac gagggcggga cctcgattgg gggcggggcg gcaatctggg
+     1261 tcttgtgcct ctggctcctc agggcattcc cggcggctcc gggtttggca acgaggacgg
+     1321 gggagtgcga ctgcgtctcg ggcagcatgg ccgagaagcg gcacacacgg gactccgaag
+     1381 cccagcggct ccccgactcc ttcaagggtg agtcccgcgt cccctgaccc tcccccgtgg
+     1441 accgagcccc cgcccgcagc gtgcgctccg aggtctgaca gccgggctcc tggccagtct
+     1501 ccgctgcttc gggctgggcg agatctcaaa gccgcggctc ctccctagta aactgagcat
+     1561 cacgaaccct gtttggcaga ctgaggtcac gatggagggg tggcgggctg ccaacggcac
+     1621 gtttcccatc gcacgggccc tggttatct
+//

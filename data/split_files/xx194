@@ -1,0 +1,509 @@
+LOCUS       AJ920329               19674 bp    DNA     linear   PRI 14-NOV-2006
+DEFINITION  Homo sapiens ABO gene for ABO glycosyltransferase, exons 1-7,
+            ABO*A101 allele (incomplete sequence coverage).
+ACCESSION   AJ920329
+VERSION     AJ920329.1  GI:62996395
+KEYWORDS    ABO gene; ABO glycosyltransferase; ABO*A101 allele; ABO*Avar
+            allele; incomplete sequence coverage.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1
+  AUTHORS   Seltsam,A., Das Gupta,C. and Blasczyk,R.
+  TITLE     A weak blood group A phenotype caused by a translation-initiator
+            mutation in the ABO gene
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 19674)
+  AUTHORS   Blasczyk,R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (31-MAR-2005) Blasczyk R., Department of Transfusion
+            Medicine, Hannover Medical School, Carl-Neuberg-Str. 1, Hannover,
+            30625, GERMANY
+  REMARK    revised by author [08-Apr-2005]
+FEATURES             Location/Qualifiers
+     source          1..19674
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="9"
+                     /map="9q34.1-q34.2"
+                     /sex="male"
+                     /tissue_type="peripheral blood"
+                     /country="Germany"
+     gene            <1..>19674
+                     /gene="ABO"
+     mRNA            join(<1..188,13171..13240,13965..14021,15473..15520,
+                     17207..17242,17797..17931,18984..>19674)
+                     /gene="ABO"
+                     /product="ABO glycosyltransferase"
+                     /allele="ABO*A101"
+     exon            1..188
+                     /gene="ABO"
+                     /number=1
+                     /allele="ABO*A101"
+     5'UTR           1..160
+                     /gene="ABO"
+                     /allele="ABO*A101"
+     CDS             join(161..188,13171..13240,13965..14021,15473..15520,
+                     17207..17242,17797..17931,18984..19674)
+                     /gene="ABO"
+                     /codon_start=1
+                     /allele="ABO*A101"
+                     /product="ABO glycosyltransferase"
+                     /protein_id="CAI79116.1"
+                     /db_xref="GI:62996396"
+                     /db_xref="GOA:P16442"
+                     /db_xref="HGNC:79"
+                     /db_xref="InterPro:IPR005076"
+                     /db_xref="PDB:1LZ0"
+                     /db_xref="PDB:1LZ7"
+                     /db_xref="PDB:1LZI"
+                     /db_xref="PDB:1LZJ"
+                     /db_xref="PDB:1R7T"
+                     /db_xref="PDB:1R7U"
+                     /db_xref="PDB:1R7V"
+                     /db_xref="PDB:1R7X"
+                     /db_xref="PDB:1R7Y"
+                     /db_xref="PDB:1R80"
+                     /db_xref="PDB:1R81"
+                     /db_xref="PDB:1R82"
+                     /db_xref="PDB:1WSZ"
+                     /db_xref="PDB:1WT0"
+                     /db_xref="PDB:1WT1"
+                     /db_xref="PDB:1WT2"
+                     /db_xref="PDB:1WT3"
+                     /db_xref="PDB:1XZ6"
+                     /db_xref="PDB:1ZHJ"
+                     /db_xref="PDB:1ZI1"
+                     /db_xref="PDB:1ZI3"
+                     /db_xref="PDB:1ZI4"
+                     /db_xref="PDB:1ZI5"
+                     /db_xref="PDB:1ZIZ"
+                     /db_xref="PDB:1ZJ0"
+                     /db_xref="PDB:1ZJ1"
+                     /db_xref="PDB:1ZJ2"
+                     /db_xref="PDB:1ZJ3"
+                     /db_xref="PDB:1ZJO"
+                     /db_xref="PDB:1ZJP"
+                     /db_xref="PDB:2A8U"
+                     /db_xref="PDB:2A8W"
+                     /db_xref="PDB:2I7B"
+                     /db_xref="PDB:2O1F"
+                     /db_xref="PDB:2O1G"
+                     /db_xref="PDB:2O1H"
+                     /db_xref="PDB:2PGV"
+                     /db_xref="PDB:2PGY"
+                     /db_xref="PDB:2RIT"
+                     /db_xref="PDB:2RIX"
+                     /db_xref="PDB:2RIY"
+                     /db_xref="PDB:2RIZ"
+                     /db_xref="PDB:2RJ0"
+                     /db_xref="PDB:2RJ1"
+                     /db_xref="PDB:2RJ4"
+                     /db_xref="PDB:2RJ5"
+                     /db_xref="PDB:2RJ6"
+                     /db_xref="PDB:2RJ7"
+                     /db_xref="PDB:2RJ8"
+                     /db_xref="PDB:2RJ9"
+                     /db_xref="PDB:3IOH"
+                     /db_xref="PDB:3IOI"
+                     /db_xref="PDB:3IOJ"
+                     /db_xref="UniProtKB/Swiss-Prot:P16442"
+                     /translation="MAEVLRTLAGKPKCHALRPMILFLIMLVLVLFGYGVLSPRSLMP
+                     GSLERGFCMAVREPDHLQRVSLPRMVYPQPKVLTPCRKDVLVVTPWLAPIVWEGTFNI
+                     DILNEQFRLQNTTIGLTVFAIKKYVAFLKLFLETAEKHFMVGHRVHYYVFTDQPAAVP
+                     RVTLGTGRQLSVLEVRAYKRWQDVSMRRMEMISDFCERRFLSEVDYLVCVDVDMEFRD
+                     HVGVEILTPLFGTLHPGFYGSSREAFTYERRPQSQAYIPKDEGDFYYLGGFFGGSVQE
+                     VQRLTRACHQAMMVDQANGIEAVWHDESHLNKYLLRHKPTKVLSPEYLWDQQLLGWPA
+                     VLRKLRFTAVPKNHQAVRNP"
+     variation       162
+                     /gene="ABO"
+                     /note="disruption of initiation codon by t/c produces
+                     functional, but less active A glycosyltransferase; a
+                     N-terminally truncated product is predicted; alternative
+                     initiation codon(s) is/are used but are not yet
+                     identified"
+                     /allele="ABO*Avar"
+                     /replace="c"
+     intron          189..>211
+                     /gene="ABO"
+                     /number=1
+                     /allele="ABO*A101"
+     gap             212..13170
+                     /estimated_length=12959
+     exon            13171..13240
+                     /gene="ABO"
+                     /number=2
+                     /allele="ABO*A101"
+     intron          13241..13964
+                     /gene="ABO"
+                     /number=2
+                     /allele="ABO*A101"
+     exon            13965..14021
+                     /gene="ABO"
+                     /number=3
+                     /allele="ABO*A101"
+     intron          14022..15472
+                     /gene="ABO"
+                     /number=3
+                     /allele="ABO*A101"
+     exon            15473..15520
+                     /gene="ABO"
+                     /number=4
+                     /allele="ABO*A101"
+     intron          15521..17206
+                     /gene="ABO"
+                     /number=4
+                     /allele="ABO*A101"
+     exon            17207..17242
+                     /gene="ABO"
+                     /number=5
+                     /allele="ABO*A101"
+     intron          17243..17796
+                     /gene="ABO"
+                     /number=5
+                     /allele="ABO*A101"
+     exon            17797..17931
+                     /gene="ABO"
+                     /number=6
+                     /allele="ABO*A101"
+     intron          17932..18983
+                     /gene="ABO"
+                     /number=6
+                     /allele="ABO*A101"
+     exon            18984..19674
+                     /gene="ABO"
+                     /number=7
+                     /allele="ABO*A101"
+ORIGIN      
+        1 tggggacccg cggccgcctc ccgcgcccct ctgtcccctc ccgtgttcgg cctcgggaag
+       61 tcggggcggc gggcggcgcg ggccgggagg gggcgcctcg ggctcacccc gccccagggc
+      121 cgccgggcgg aaggcggagg ccgagaccag acgcggagcc atggccgagg tgttgcggac
+      181 gctggccggt gagtgcaggc ctcggccccg gnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      241 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      301 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      361 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      421 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      481 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      541 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      601 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      661 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      721 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      781 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      841 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      901 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      961 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1021 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1081 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1141 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1201 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1261 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1321 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1381 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1441 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1501 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1561 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1621 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1681 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1741 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1801 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1861 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1921 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     1981 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2041 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2101 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2161 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2221 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2281 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2341 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2401 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2461 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2521 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2581 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2641 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2701 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2761 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2821 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2881 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     2941 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3001 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3061 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3121 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3181 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3241 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3301 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3361 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3421 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3481 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3541 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3601 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3661 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3721 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3781 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3841 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3901 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     3961 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4021 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4081 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4141 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4201 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4261 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4321 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4381 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4441 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4501 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4561 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4621 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4681 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4741 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4801 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4861 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4921 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     4981 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5041 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5101 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5161 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5221 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5281 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5341 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5401 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5461 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5521 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5581 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5641 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5701 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5761 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5821 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5881 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     5941 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6001 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6061 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6121 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6181 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6241 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6301 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6361 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6421 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6481 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6541 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6601 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6661 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6721 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6781 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6841 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6901 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     6961 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7021 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7081 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7141 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7201 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7261 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7321 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7381 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7441 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7501 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7561 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7621 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7681 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7741 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7801 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7861 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7921 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     7981 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8041 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8101 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8161 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8221 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8281 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8341 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8401 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8461 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8521 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8581 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8641 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8701 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8761 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8821 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8881 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     8941 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9001 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9061 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9121 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9181 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9241 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9301 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9361 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9421 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9481 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9541 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9601 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9661 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9721 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9781 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9841 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9901 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+     9961 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10021 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10081 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10141 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10201 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10261 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10321 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10381 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10441 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10501 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10561 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10621 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10681 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10741 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10801 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10861 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10921 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    10981 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11041 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11101 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11161 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11221 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11281 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11341 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11401 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11461 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11521 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11581 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11641 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11701 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11761 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11821 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11881 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    11941 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12001 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12061 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12121 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12181 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12241 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12301 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12361 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12421 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12481 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12541 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12601 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12661 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12721 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12781 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12841 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12901 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    12961 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    13021 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    13081 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+    13141 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn gaaaaccaaa atgccacgca cttcgaccta
+    13201 tgatcctttt cctaataatg cttgtcttgg tcttgtttgg gtaagacaca tttgaccatc
+    13261 gaggctggcc tggtttgggg agaagtgacc acagcagcca atcagaccca tggggcctcc
+    13321 ctgagctccc caagtatcac agttatcagg gtcctaagga cagttattgc ctgcgtccag
+    13381 ctctggcgga gggtgtgctt acttgctccc ttattttagc ctcacctggg caacaggctc
+    13441 atctcactcc catttaaaat tttcctaagt gtggagtctg gggctgggag agcaagcccc
+    13501 ttgcccacaa ttgcgtggct gggggtgggg aaggcaattc tgggtcccaa gctgttagtc
+    13561 gcttccagac acagaaggtc ccagaaccaa gagtgaagtc acctgtcacc tctactgggg
+    13621 catctctgga cacggtctgg aaacactccc tgacgtggcc tcagggactg cactgaccaa
+    13681 ggcactggtg gcggggggtg agggagctgg ggctctggag ctccagcagg tgcccatacg
+    13741 tgagcaatat cccagggacc accctcctgc ccacctcccg gtgtgggacg tggcgaggcg
+    13801 cctgagcttt gctgagaact tgccctacct gcctcgaggc cttgcagctt caccgggaac
+    13861 tcttgtgctc acgctgctgg ccgcaccatg cactttttgg aggaagggac caacaggcag
+    13921 tcttcgttct gtgtcctgag tcttggcaca cttcctttct gcagttacgg ggtcctaagc
+    13981 cccagaagtc taatgccagg aagcctggaa cgggggttct ggtgagtgca gggaagagca
+    14041 ggtggagcat ccatgctggc cggggtgctg gctgtgggcg ggggtcccac tctgggaact
+    14101 ccccctcccc ttcctgggcc cgctctctat gctctgccca gtgtagacat gctcaactct
+    14161 gtggccttga agggtcacct ggatacctct ggagtcagcc ttgacctccc ttctgacctc
+    14221 cagtccccaa ctccaggctt acccagagtt cccatgcatg gtctctgctc ccccatcccc
+    14281 acccctcctc caccagccat cctcaactct ccctttgctc tcacccctac actgggttcc
+    14341 caaatcctgc cagccctgct cttcagcagc tcgcgtgccc actggcctcc ctgccttcga
+    14401 cgtcctgctc cagggctccg gtggggctgc cctcatctct gtgacagcct cagacttgtc
+    14461 tccccatccc catcagccct gtcccccttc ttctcacagc agctggagtg atctttccag
+    14521 aacataaggt aggaggctct ccatgatctg atcctgcctt cctgacctcc ccagcctcat
+    14581 ctctccctcc tctgccctcg ccctctgtgc tccagccaac gtggcctgtc actcgtccac
+    14641 ctgccatact gtcctgactc caggcctttg cctgtgctat ggcctctgtt gggaccactc
+    14701 ttgtctctcc cctgctgtgt ctgctaattc ccactcgtgt cagtgatcca tggctgcaga
+    14761 acacaccact ccatccatgg aaaacaatca caatcattga ttactatctc tccctgggct
+    14821 tcctggggtg gactgggctc agctgggtgg ttcactttgg ggcctcagca gtcatgggca
+    14881 gacagtggct ggggtcactg caaagacttc cctgcatctc tggcagttga tgctggctgt
+    14941 catctgagac acctacccag ggcctctccc tggggcctgg gctcctgctt agcttggttg
+    15001 ggaggctcca agaccaacat cccaagaaag atgagacaga agccagatca cctttttggg
+    15061 cctggcttca gaagtcaccc agcatcactt ctgctgcatt tatttcttag aaacacagaa
+    15121 tatcagaccc catctcttga tgggaggggg cctcatggtt tgtagacatg ttctgaaact
+    15181 ccactctgcc cggccttggc ttcgacgtgt ctggtgaatg tgtgggctgt gaggctcccc
+    15241 gaacgtagac ctcagactgc aacgctggcc gttacagggt ctggcacacg ggcccacgtc
+    15301 aggcccatcg ccacagtgat ggttgttctg tgactgtttc tggtggcctc tgctccacac
+    15361 tccaggctga cgctgtgccc cttccactgg gaccctcggg tggcttccat gcacttgtgc
+    15421 cctaaatcct gctcctagac taaacttcat ctcctgtgtt ctcattctgc agcatggctg
+    15481 ttagggaacc tgaccatctg cagcgcgtct cgttgccaag gtataatgtc agtgcctccc
+    15541 ttcagtggct cccatgtcac agaattgtcc tgcagccctg gcacatgtgt gccatgtggg
+    15601 agctggggca ggtcctcttt cctcctgtgg ctccgaggga gggggccgct ccttccccag
+    15661 tctctaccct gacttggccc tcgtcctgca gccactcaga gagcacgatg gagctggagc
+    15721 ttcagttttg accaaatgcg tgtcgccggc ttttgtgtgt gtgtgtgtgt gatggagtct
+    15781 cgctctgtcg cccaggctgg agtgcattgg caccatctct gcccactgca acctctgcct
+    15841 cctgggctca agtgattctc ctgcctcagc ctcctgagta gctgggatta caggcgccca
+    15901 ccaccacacc tggctaattt ttgtattttt agcagagaca gcgtttcacc atgttggcca
+    15961 ggctagtctt gaactcctga cttcaaatga tccgcccgcc tcagcctccc aaagtgctgg
+    16021 gattacaggc atgagccccg gcacctggcc ttcaaattgg cttttaaaga agatgaccag
+    16081 ctggtctgtt ctgtctgggg ccttggaggg ctgtttccca ggatgtgggc ctttatcagt
+    16141 gctgacctag gcaatcaagg ccaagctggc cacactgctt ttgatttttt ttaaattgtg
+    16201 atgaaatacg cttaacataa aatttgccat cttagtcatt ttggagtgtt cagtagcttt
+    16261 aagtccattc acattgctgt gcagccatca ccaccatcca tctccagaac tcttttcatc
+    16321 ttgccaacct gaagctctgt ccccataaaa tagcaactcc attttccctc ccccagctca
+    16381 ccattccatg gtctgttgtt atgagtctgc tactccaact accttttata agtggagtca
+    16441 atggtacctg tgtttttatg tcgggctcaa atcactgagc gtgatgtcct cacggtccat
+    16501 ccaggttgta ccaagtgtca gaatttcctt cctgttttct gctgactccc tgcttttaaa
+    16561 ggccatcttg gacattcaaa ttgtggccat tactgacagt taaaatggcc ccggctcatg
+    16621 tctcctgagc ctctacaatc ctttaggtgg ggacagtact gcggcccaca cgtccccaca
+    16681 ggctgcgtgt gacacctgac agtgctttgt gccactgtgg agcaggtgtc actctcccac
+    16741 ttctcagaga ggaagccggg ctctggaagc cagcagccca caaggaggcc cagcaggctt
+    16801 cgggcccagg tggggaggtc tgcacatctc agggcctttc cctgggaaca accagggaca
+    16861 gaggccacac acccagcctc ctctctgccc acagtgaatt gagacacaac cccttacgtc
+    16921 cctcccagcc ttaagtcaag tggaaagcaa tggcccctga ggtcacttag tccctcttgc
+    16981 cagtttgtaa gtgctgaatc agagactctg agctttggcc ctttcccgag ttcccgggat
+    17041 tatgagctga cacagccccc aagcaaccac agtgattcca gcctgggagt gtggccttgg
+    17101 cgggagggtc aatgcccagt catggttcag cggctgtgca cacccctgct tacctgcatc
+    17161 ccacgctttc catgcaaact cacgtggcgg cgctttgtgc ttgcaggatg gtctaccccc
+    17221 agccaaaggt gctgacaccg tggtgagtaa agttactgac actgaaactg aacgcagctc
+    17281 aaggggctgt tctgaaggta ttagagggcg gtttccttga tgtaaatctc agttggggct
+    17341 gcttcgttct ctcctctcag attctcctga catctgaatt cagaggccca catggctgtc
+    17401 ctctttccct ttgctttctc tgacttgcgt ctcttgtttc ctgtcccttt gttctccaaa
+    17461 gcccctgcaa aggcctgata ggtacctcct acctggggag gggcagcggg ggttgggtgc
+    17521 tggggagggt ttgttcctat ctctttgcca gcaaagctca gcttgctgtg tgttcccgca
+    17581 ggtccaatgt tgagggaggg ctgggaatga tttgcccggt tggagtcgca tttgcctctg
+    17641 gttggtttcc cggggaaggg cggctgcctc tggaagggtg gtcagaggag gcagaagctg
+    17701 agtggagttt ccaggtgggg gcggccgtgt gccagaggcg catgtgggtg gcaccctgcc
+    17761 agctccatgt gaccgcacgc ctctctccat gtgcagtagg aaggatgtcc tcgtggtgac
+    17821 cccttggctg gctcccattg tctgggaggg cacattcaac atcgacatcc tcaacgagca
+    17881 gttcaggctc cagaacacca ccattgggtt aactgtgttt gccatcaaga agtaagtcag
+    17941 tgaggtggcc gagggtagag acccaggcag tggcgagtga ctgtggacat tgaggtctct
+    18001 ccttgtgttc aagacagagt ggggtggcgg ccagccttgt cctcccagag ggtagatggg
+    18061 aaaggtcatt catgcagcat cttactgagc tcatgtgggc tcgtgggctc gtgggctcgc
+    18121 caggtcggta aaacccagct ccttctccag aggctgcgtc tcacccaggg atggtggctt
+    18181 ctgctgcccc ctcctctctg taactgtggc cggccgtcat gctgagccac cccctcaata
+    18241 caaggctcca gatgtttcct gctcactgac cagagatagc aggaggggga cacctgtttg
+    18301 ctgtccttgg accctagaaa gaggatgctg gcagagccgt ggtcacttct ctgtcagatg
+    18361 taggtggggc aggcaaagca gttggcccca gacaccaaag gaagtggctg acccacaagg
+    18421 ccctgggact ctgggccagg ccagagaggg agctagccag gcaaccgcag acacatactt
+    18481 gacttctcgg cagctgtggg cagctgggcc agcgacagtg gcggaggcca ggaatgactt
+    18541 actcttagga ataggtgcag ttcaagcctg gagggaggaa gctctagggt gcagaggcgg
+    18601 gtgtgtggag gcctcgcgtg cagcttataa tgagggagca cgtggccggc ctggccataa
+    18661 gaggggcagc tgcgtgggga ggcgtggctc aggccaggct gagggggagt gagcggacgc
+    18721 cagcctgcgg cctgctacca gcctccagcc acctgccctc agccctcctt agtaagaggg
+    18781 ggtgctggtg gtcccccatc gctgggaaga ggatgaagtg aatcgcagcc cgaggactcg
+    18841 ctcaggacag ggcaggagaa cgtggtgcat ctgctgctct aagccttcca atggccgctg
+    18901 gcgggcgggt gcaggacggg cctcctgcag cccaggggtg cacggccggc ggctccccca
+    18961 gcccccgtcc gcctgccttg cagatacgtg gctttcctga agctgttcct ggagacggcg
+    19021 gagaagcact tcatggtggg ccaccgtgtc cactactatg tcttcaccga ccagccggcc
+    19081 gcggtgcccc gcgtgacgct ggggaccggt cggcagctgt cagtgctgga ggtgcgcgcc
+    19141 tacaagcgct ggcaggacgt gtccatgcgc cgcatggaga tgatcagtga cttctgcgag
+    19201 cggcgcttcc tcagcgaggt ggattacctg gtgtgcgtgg acgtggacat ggagttccgc
+    19261 gaccacgtgg gcgtggagat cctgactccg ctgttcggca ccctgcaccc cggcttctac
+    19321 ggaagcagcc gggaggcctt cacctacgag cgccggcccc agtcccaggc ctacatcccc
+    19381 aaggacgagg gcgatttcta ctacctgggg gggttcttcg gggggtcggt gcaagaggtg
+    19441 cagcggctca ccagggcctg ccaccaggcc atgatggtcg accaggccaa cggcatcgag
+    19501 gccgtgtggc acgacgagag ccacctgaac aagtacctgc tgcgccacaa acccaccaag
+    19561 gtgctctccc ccgagtactt gtgggaccag cagctgctgg gctggcccgc cgtcctgagg
+    19621 aagctgaggt tcactgcggt gcccaagaac caccaggcgg tccggaaccc gtga
+//

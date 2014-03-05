@@ -1,0 +1,125 @@
+LOCUS       FN598481                2787 bp    DNA     linear   PRI 02-FEB-2010
+DEFINITION  Homo sapiens partial ABO gene, allele ABO*0.03.1.1, exons 5-7.
+ACCESSION   FN598481
+VERSION     FN598481.1  GI:285310281
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1
+  AUTHORS   Matzhold,E.M., Drexler,C. and Helmbert,W.
+  TITLE     ABO haplotyping using longrange PCR
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 2787)
+  AUTHORS   Matzhold,E.M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-NOV-2009) Matzhold E.M., Medical University Graz,
+            Blood Group Serology and Transfusion Medicine, Auenbruggerplatz 3,
+            8036, AUSTRIA
+FEATURES             Location/Qualifiers
+     source          1..2787
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="9"
+                     /tissue_type="WBC"
+                     /country="Austria"
+     gene            <1..>2787
+                     /gene="ABO"
+     intron          <1..194
+                     /gene="ABO"
+                     /number=4
+                     /allele="ABO*0.03.1.1"
+     mRNA            join(195..230,788..922,1975..>2787)
+                     /gene="ABO"
+                     /allele="ABO*0.03.1.1"
+     CDS             join(<195..230,788..922,1975..2665)
+                     /gene="ABO"
+                     /note="residual activity"
+                     /codon_start=2
+                     /allele="ABO*0.03.1.1"
+                     /product="ABO blood group (transferase A, alpha
+                     1-3-N-acetylgalactosaminyltransferase; transferase B,
+                     alpha 1-3-galactosyltransferase)"
+                     /protein_id="CBI62111.1"
+                     /db_xref="GI:285310282"
+                     /db_xref="GOA:D3HIC3"
+                     /db_xref="InterPro:IPR005076"
+                     /db_xref="UniProtKB/TrEMBL:D3HIC3"
+                     /translation="MVYPQSKVLTPCRKDVLVVTPWLAPIVWEGTFNIDILNEQFRLQ
+                     NTTIGLTVFAIKKYVAFLKLFLETAEKHFMVGHRVHYYVFTDQPAAVPRVTLGTGRQL
+                     SVLEVGAYKRWQDVSMRRMEMISDFCERRFLSEVDYLVCVDVDMEFRDHVGVEILTPL
+                     FGTLHPGFYGSSREAFTYERRPQSQAYIPKDEGDFYYLGRFFGGSVQEVQRLTRACHQ
+                     AMMVDQANGIEAVWHDESHLNKYLLRHKPTKVLSPEYLWDQQLLGWPAVLRKLRFTAV
+                     PKNHQAVRNP"
+     exon            195..230
+                     /gene="ABO"
+                     /number=5
+                     /allele="ABO*0.03.1.1"
+     intron          231..787
+                     /gene="ABO"
+                     /number=5
+                     /allele="ABO*0.03.1.1"
+     exon            788..922
+                     /gene="ABO"
+                     /number=6
+                     /allele="ABO*0.03.1.1"
+     intron          923..1974
+                     /gene="ABO"
+                     /number=6
+                     /allele="ABO*0.03.1.1"
+     exon            1975..>2787
+                     /gene="ABO"
+                     /number=7
+                     /allele="ABO*0.03.1.1"
+ORIGIN      
+        1 ttcggccctt tcccgaggtc ccgggattat gagctgacac agcccccaag caaccacagt
+       61 gattccagcc tgggagtgtg gccttggcgg gagggtcaat gcccagtcat ggttcagcgg
+      121 ctgtgcacac cccctgctta cctgcatccc acgctttcca tgcaaactca cgtggcggcg
+      181 ctttgtgctt gcaggatggt ctacccccag tcaaaggtgc tgacaccgtg gtgagtaaag
+      241 ttactgacac tgaaactgaa cgcagctcaa ggggctgttc tgaaggtatt agagggcggt
+      301 ttccttgatg taaatctcag ctggggctgc ttccccgttc tctcctctca gattctcctg
+      361 acatctgaat tcagaggccc acatggctgt cctctttccc tttgctttct ctgacttgcg
+      421 tctcttgttt cctgtccctt tgttctccaa agcccctgca aaggcctgat aggtacctcc
+      481 tacctgggga ggggcagcag gggttgggtg ctggggaggg tttgttccta tctctttgcc
+      541 agcaaagctc agcttgctgt gtgttcccgc aggtccaatg ttgagggagg gctgggaatg
+      601 atttgcccgg ttggagtcgc atttgcctct ggttggtttc ccggggaagg gcggctgcct
+      661 ctggaagggt ggtcagagga ggcagaagct gagtggagtt tccaggtggg ggcggccgtg
+      721 tgccagaggc gcatgtgggt ggcaccctgc cagctccatg tgaccgcacg cctctctcca
+      781 tgtgcagtag gaaggatgtc ctcgtggtga ccccttggct ggctcccatt gtctgggagg
+      841 gcacgttcaa catcgacatc ctcaacgagc agttcaggct ccagaacacc accattgggt
+      901 taactgtgtt tgccatcaag aagtaagtca gtgaggtggc cgagggtaga gacccaggca
+      961 gtgtcgagtg actgtggaca ttgaggtctc tccttgtgtt caagacagag tggggtggcg
+     1021 gccagccttg tcctcccaga gggtagatgg gaaaggtcat tcatgcagca tcttactgag
+     1081 ctcacgtggg ctcgtgggct tgtgggctcg ccaggtcggt aaaacccagc tccttctcca
+     1141 gaggctgcgt ctcacccagg gatggtggct tctgctgccc cctcctctct gtgactgtgg
+     1201 ctggccgtca tgctgagcca ccccctcaat acaaggctcc agatgtttcc tgctcactga
+     1261 ccagagatag caggaggggg acacctgttt gctgtccttg gaccctagaa agaggatgct
+     1321 ggcagagccg tggtcacttc tctgtcagat gtaggtgggg caggcaaggc agttggcccc
+     1381 agacaccaaa ggaagtggct gacccacaag gccctgggac tctgggccag gccagagagg
+     1441 gagctagcca ggcaaccgca gacacatact tgacttctcg gcagctgtgg gcagctgggc
+     1501 cagcgacagt ggcggaggcc aggaatgact tactcttagg aataggtgcg gttcaagcct
+     1561 ggagggagga agctctaggg tgcagaggcg ggtgtgtgga ggcctcgcgt gcagcttata
+     1621 atgagggagc acgtggccgg cctggccata agaggggcag ctgcgtgggg aggcgtggct
+     1681 caggccaggc tgagggggag tgagcgggcg ccagcctgcg gcctgctacc agcctccagc
+     1741 cacctgccct cagccctcct tagtaagagg gggtgctggt ggtcccccat cgctgggaag
+     1801 aggatgaagt gagtcgcagc ccaaggactc gctcaggaca gggcaggaga acgtggtgca
+     1861 tctgctgctc tgagccttcc aatggccgct ggcgggcggg tgcaggacgg gcctcctgca
+     1921 gcccaggggt gcacggccgg cggctccccc agcccccgtc cgcctgcctt gcagatacgt
+     1981 ggctttcctg aagctgttcc tggagacggc ggagaagcac ttcatggtgg gccaccgtgt
+     2041 ccactactat gtcttcaccg accagccggc cgcggtgccc cgcgtgacgc tggggaccgg
+     2101 tcggcagctg tcagtgctgg aggtgggcgc ctacaagcgc tggcaggacg tgtccatgcg
+     2161 ccgcatggag atgatcagtg acttctgcga gcggcgcttc ctcagcgagg tggattacct
+     2221 ggtgtgcgtg gacgtggaca tggagttccg cgaccacgtg ggcgtggaga tcctgactcc
+     2281 gctgttcggc accctgcacc ccggcttcta cggaagcagc cgggaggcct tcacctacga
+     2341 gcgccggccc cagtcccagg cctacatccc caaggacgag ggcgatttct actacctggg
+     2401 gaggttcttc ggggggtcgg tgcaagaggt gcagcggctc accagggcct gccaccaggc
+     2461 catgatggtc gaccaggcca acggcatcga ggccgtgtgg cacgacgaga gccacctgaa
+     2521 caagtacctg ctgcgccaca aacccaccaa ggtgctctcc cccgagtact tgtgggacca
+     2581 gcagctgctg ggctggcccg ccgtcctgag gaagctgagg ttcactgcgg tgcccaagaa
+     2641 ccaccaggcg gtccggaacc cgtgagcggc tgccaggggc tctgggaggg ctgccagcag
+     2701 ccccgtcccc ctcccgccct tggttttagc agaacgggta aactctgttt cctttgtccg
+     2761 tcctgttgtg agtaactgaa gcctagg
+//

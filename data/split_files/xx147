@@ -1,0 +1,69 @@
+LOCUS       SEG_HUMCABLA             549 bp    DNA     linear   PRI 30-JUN-2011
+DEFINITION  Homo sapiens c-abl (ABL1) gene, partial cds.
+ACCESSION   AH002626 M13098 M13099
+VERSION     AH002626.2  GI:338858127
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 549)
+  AUTHORS   Grosveld,G., Verwoerd,T., van Agthoven,T., de Klein,A.,
+            Ramachandran,K.L., Heisterkamp,N., Stam,K. and Groffen,J.
+  TITLE     The chronic myelocytic cell line K562 contains a breakpoint in bcr
+            and produces a chimeric bcr/c-abl transcript
+  JOURNAL   Mol. Cell. Biol. 6 (2), 607-616 (1986)
+   PUBMED   3023859
+COMMENT     On or before Jun 30, 2011 this sequence version replaced gi:179747,
+            gi:179748, gi:179749.
+FEATURES             Location/Qualifiers
+     source          1..549
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="9"
+                     /map="9q34.1"
+     gene            <1..>549
+                     /gene="ABL1"
+     mRNA            join(<31..204,365..>549)
+                     /gene="ABL1"
+                     /product="c-abl"
+     CDS             join(<31..204,365..>549)
+                     /gene="ABL1"
+                     /codon_start=3
+                     /product="c-abl"
+                     /protein_id="AAA51896.1"
+                     /db_xref="GI:179750"
+                     /translation="ALQRPVASDFEPQGLSEAARWNSKENLLAGPSENDPNLFVALYD
+                     FVASGDNTLSITKGEKLRVLGYNHNGEWFEAQTKNGQGWVPSNYITPVNSLEKHSWYH
+                     GPVSRNAAEYLLSSGIN"
+     exon            31..204
+                     /gene="ABL1"
+                     /note="G00-119-640; putative"
+                     /number=a1
+     intron          205..>234
+                     /gene="ABL1"
+                     /note="c-abl"
+                     /number=A
+     gap             235..334
+                     /estimated_length=unknown
+     intron          <335..364
+                     /gene="ABL1"
+                     /number=A
+     exon            365..>549
+                     /gene="ABL1"
+                     /note="G00-119-640; putative"
+                     /number=a2
+ORIGIN      
+        1 cttttttctg ttcccccctt tctcttccag aagcccttca gcggccagta gcatctgact
+       61 ttgagcctca gggtctgagt gaagccgctc gttggaactc caaggaaaac cttctcgctg
+      121 gacccagtga aaatgacccc aaccttttcg ttgcactgta tgattttgtg gccagtggag
+      181 ataacactct aagcataact aaaggtaaaa gggttgtggg cagctagtgg tggtnnnnnn
+      241 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn
+      301 nnnnnnnnnn nnnnnnnnnn nnnnnnnnnn nnnnatatgt ctgatttggt tcctttcttc
+      361 tcaggtgaaa agctccgggt cttaggctat aatcacaatg gggaatggtt tgaagcccaa
+      421 accaaaaatg gccaaggctg ggtcccaagc aactacatca cgccagtcaa cagtctggag
+      481 aaacactcct ggtaccatgg gcctgtgtcc cgcaatgccg ctgagtatct gctgagcagc
+      541 gggatcaat
+//
