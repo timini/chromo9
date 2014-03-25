@@ -52,8 +52,11 @@ def create_and_load_db():
     global SETTINGS
     SETTINGS = Settings(**SETTINGS)
 
+    if not hasattr(SETTINGS.DB, 'USER'):
+        SETTINGS.DB.USER = raw_input('Please enter username for database : ')
+
     if not hasattr(SETTINGS.DB, 'PASSWD'):
-        SETTINGS.DB.PASSWD = raw_input('Enter passwd for mysql user {}: '.format(SETTINGS.DB.USER))
+        SETTINGS.DB.PASSWD = raw_input('Enter passwd for mysql user "{}": '.format(SETTINGS.DB.USER))
 
     conn_string = 'mysql+mysqldb://{user}:{passwd}@{location}:{port}'.format(
                                                 user = SETTINGS.DB.USER,
