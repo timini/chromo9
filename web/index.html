@@ -4,23 +4,35 @@
 </head>
 <body>
 
-<div id="container">This contains most everything.. I think</div>
+<div id="container"></div>
 
-<div id="Header">This is the header/title area - put an image maybe?</div>
+<div id="Header">
+	<HeaderText>Chromosome Explorer</HeaderText>
+</div>
 
 <div id="LeftTab">This is the left toolbar/set of links</div>
 
-<p>This page submits a parameter to a script. 
-Please enter your name.
-</p>
-<form method="post" action="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=search">
-<input type = "text" name = "search">
-<input type = "submit" value = "send"> 
-</form>  
+
+<fieldset> 
+	<form>
+	<legend>Search for a specific gene below:</legend>
+	<method="post" action="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=search">		
+	
+	Search Term: <input type = "text" name = "query">
+	Is it a:
+<input type = "radio" name = "type" value="Gene_ID">Gene ID
+<input type = "radio" name = "type" value="Protein_Product_">Protein Name
+<input type = "radio" name = "type" value="Genbank_Accession">Genbank Accession ID
+<input type = "radio" name = "type" value="Chromosomal_Location">Chromosomal Location
+<input type = "submit" value = "Search"> 
+
+</form>
+</fieldset>
 
 
-<p><a href="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=gene&geneName=SomeGene">SomeGene</a></p>
 
+<p>Or, <a href="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=detail">click</a> for a summary list of all genes found.</p>
+Broken
   
 </body>
 </html>
