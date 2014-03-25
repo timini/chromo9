@@ -10,12 +10,17 @@
 
 <div id="LeftTab">This is the left toolbar/set of links</div>
 
-<b>
-Click <a href="http://student.cryst.bbk.ac.uk/~gseed01/web/details.html">here</a> for the details page.
-</b>
+<p>This page submits a parameter to a script. 
+Please enter your name.
+</p>
+<form method="post" action="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=search">
+<input type = "text" name = "search">
+<input type = "submit" value = "send"> 
+</form>  
 
-  
-  
+
+<p><a href="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=gene&geneName=SomeGene">SomeGene</a></p>
+
   
 </body>
 </html>
