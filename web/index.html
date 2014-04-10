@@ -4,43 +4,47 @@
 </head>
 <body>
 
-
-
+<div id="container"></div>
 <div id="Header">
 	<HeaderText>Chromosome Explorer</HeaderText>
 </div>
 
 <div id="LeftTab">
-
-<a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a>
-
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
 </div>
 
-<div id="container">
+
+<fieldset>
+	
+	<form method="post" action="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=search">
+		<p>
+		<legend>Search for a named gene or feature below:</legend>
+		
+		<input type = "text" name = "search">
+	
+		<br/>
+		Is it a:
+		<br/>
+		<input type = "radio" name = "type" value="Gene_IDs">Gene ID
+		<input type = "radio" name = "type" value="Protein_Products">Protein Name
+		<input type = "radio" name = "type" value="Genbank_Accession_IDs">Genbank Accession ID
+		<input type = "radio" name = "type" value="Chromosomal_Locations">Chromosomal Location
+	
+		<input type = "submit" value = "submit search" > 
+		</p>
+	</form>
+</fieldset>
+
+
+
 <fieldset>
 	<form>
-	<legend>Search for a named gene or feature below:</legend>
-	<method="post" action="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=search">		
+	<p>
+	Or, <a href="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=summary">click</a> for a summary list of all genes found.
+	</p>
+	</form>
 	
-	<input type = "text" name = "query">
-<br/>
-	Is it a:
-<br/>
-<input type = "radio" name = "type" value="Gene_ID">Gene ID
-<input type = "radio" name = "type" value="Protein_Product">Protein Name
-<input type = "radio" name = "type" value="Genbank_Accession">Genbank Accession ID
-<input type = "radio" name = "type" value="Chromosomal_Location">Chromosomal Location
-<input type = "submit" value = "submit search"> 
-
-</form>
 </fieldset>
-
-
-
-<fieldset>
-<form>Or, <a href="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=detail">click</a> for a summary list of all genes found.</form>
-</fieldset>
-</div>
 
 
 </body>

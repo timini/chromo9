@@ -3,20 +3,62 @@ use CGI;
 use strict;
 use warnings;
 
+my $search = "";
+my $summary = "";
+
 my $cgi = new CGI;
 my $cmd = $cgi->url_param('cmd');
 
 if ($cmd eq "search") {
 Search();
-} elsif ($cmd eq "detail") {
-GeneDetails();
+} elsif ($cmd eq "summary") {
+Summary();
+} elsif ($cmd eq "details") {
+Details();
+}
+
+
+sub FakeList
+{
+my $table = "<div id='table'>";
+for (my $count = 10; $count >= 1; $count--) {
+ 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=AB98989'>Gene Name: AB98989</a>, gene ID, more details, etc, </div></p>";
+	}
+$table .= "</div>";
+return $table;
+} 
+
+sub Details
+{
+my $id = $cgi->param('id');
+
+print $cgi->header();
+print <<EOF;
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home.css'/>
+</head>
+<body>
+<div id="container"></div>
+<div id="Header">
+	<HeaderText>Chromosome Explorer</HeaderText>
+</div>
+<div id="LeftTab">
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+</div>
+<p>You successfully looked for gene $id</p>
+</body>
+</html>
+EOF
 }
 
 
 sub Search
 {
-my $searchString = $cgi->param('query');
+my $searchString = $cgi->param('search');
 my $searchOption = $cgi->param('type');
+my $results = FakeList();
+
 print $cgi->header();
 print <<EOF;
 <html>
@@ -25,19 +67,25 @@ print <<EOF;
 </head>
 <body>
 <div id="container"></div>
-<div id="Header">This is the header/title area - put an image maybe?</div>
-<div id="LeftTab">This is the left toolbar/set of links</div>
-<p>The Command is: $cmd</p>
-<p>$searchString</p>
-<p>searchoption = $searchOption</p>
+<div id="Header">
+	<HeaderText>Chromosome Explorer</HeaderText>
+</div>
+<div id="LeftTab">
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+</div>
+<p>Here is a list of genes generated using your search term ($searchString).</p>
+<p>This search looked through $searchOption.</p>
+<fieldset>
+<p>$results</p>
+</fieldset>
 </body>
 </html>
 EOF
 }
 
-sub GeneDetails
+sub Summary
 {
-my $geneName = $cgi->url_param('details');
+my $request = $cgi->url_param('summary');
 
 print $cgi->header();
 print <<EOF;
@@ -47,11 +95,21 @@ print <<EOF;
 </head>
 <body>
 <div id="container"></div>
-<div id="Header">This is the header/title area - put an image maybe?</div>
-<div id="LeftTab">This is the left toolbar/set of links</div>
+<div id="Header">
+	<HeaderText>Chromosome Explorer</HeaderText>
+</div>
+<div id="LeftTab">
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+</div>
+<fieldset>
 <p>The Command is: $cmd</p>
-<p>$geneName</p>
+<p>$summary</p>
+</fieldset>
 </body>
 </html>
 EOF
 }
+
+
+
+
