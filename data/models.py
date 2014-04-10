@@ -5,14 +5,7 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship, backref
 
-SETTINGS = {
-            'DB':{
-                  'USER':'root',
-                  'LOCATION':'localhost',
-                  'PORT':'3306',
-                  'DATABASE_NAME':'chromo9',
-                  },
-            }
+from .settings import SETTINGS
 
 class Settings:
     def __init__(self, **attrs):
