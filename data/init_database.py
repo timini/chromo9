@@ -15,18 +15,12 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import sessionmaker#, relationship, backref
 
-SETTINGS = {
-            'DB':{
-                  'USER':'root',
-                  'LOCATION':'localhost',
-                  'PORT':'3306',
-                  'DATABASE_NAME':'chromo9',
-                  },
-            }
+from settings import SETTINGS
 
 def main():
     records = parse()
     models, db_session = create_and_load_db()
+    import ipdb; ipdb.set_trace() ############################## Breakpoint ##############################
     load_to_db(records, models, db_session)
     choice = raw_input('Would you like to make a database dump? (y/n) :')
     if choice.strip() in ('y','Y','yes'):
@@ -47,7 +41,6 @@ def parse(path='./flat_files/'):
 
     return records
 
-
 def create_and_load_db():
     global SETTINGS
     SETTINGS = Settings(**SETTINGS)
@@ -66,7 +59,11 @@ def create_and_load_db():
                                                                              )
     #engine = create_engine('sqlite:///:memory:')
     engine = create_engine(conn_string, echo=False)
-    engine.execute('CREATE DATABASE IF NOT EXISTS {}'.format(SETTINGS.DB.DATABASE_NAME))
+    try:
+        engine.execute('CREATE DATABASE IF NOT EXISTS {}'.format(SETTINGS.DB.DATABASE_NAME))
+    except:
+        raise Exception('wrong password?')
+
     engine.execute('USE {}'.format(SETTINGS.DB.DATABASE_NAME))
     Session = sessionmaker(bind=engine)
     session = Session()
