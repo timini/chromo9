@@ -1,20 +1,21 @@
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='home2.css'/>
+<link rel='stylesheet' type='text/css' href='home.css'/>
 </head>
 <body>
 
-<div class="container"></div>
-<header>
+<div id="container"></div>
+<div id="Header">
 	<HeaderText>Chromosome Explorer</HeaderText>
-</header>
+</div>
 
-<nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Chromosome 9 Home</a></p>
- 	<p><a href="#">Chromosome list.</a></p>
-</nav>
+<div id="LeftTab">
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+</div>
 
-<section>	
+<div id="main">
+<fieldset>
+	
 	<form method="post" action="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=search">
 		<p>
 		<legend>Search for a named gene or feature below:</legend>
@@ -32,15 +33,19 @@
 		<input type = "submit" value = "submit search" > 
 		</p>
 	</form>
-</section>
+</fieldset>
 
-<section>
+
+
+<fieldset>
 	<form>
 	<p>
 	Or, <a href="http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=summary">click</a> for a summary list of all genes found.
 	</p>
 	</form>
-</section>
+	
+</fieldset>
+</div>
 
 </body>
 </html>

@@ -36,17 +36,20 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home.css'/>
+<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
 </head>
 <body>
-<div id="container"></div>
-<div id="Header">
+<container></container>
+<header>
 	<HeaderText>Chromosome Explorer</HeaderText>
-</div>
-<div id="LeftTab">
+</header>
+<nav>
 	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
-</div>
-<p>You successfully looked for gene $id</p>
+	<p><a href="#">Chromosome list.</a></p>
+</nav>
+<section>
+	<p>You successfully looked for gene $id</p>
+</section>
 </body>
 </html>
 EOF
@@ -63,21 +66,24 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home.css'/>
+<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
 </head>
 <body>
-<div id="container"></div>
-<div id="Header">
+<container></container>
+<header>
 	<HeaderText>Chromosome Explorer</HeaderText>
-</div>
-<div id="LeftTab">
+</header>
+<nav>
 	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
-</div>
-<p>Here is a list of genes generated using your search term ($searchString).</p>
-<p>This search looked through $searchOption.</p>
-<fieldset>
-<p>$results</p>
-</fieldset>
+	<p><a href="#">Chromosome list.</a></p>
+</nav>
+<section>
+	<p>Here is a list of genes generated using your search term ($searchString).</p>
+	<p>This search looked through $searchOption.</p>
+	<fieldset>
+		<p>$results</p>
+	</fieldset>
+</section>
 </body>
 </html>
 EOF
@@ -92,20 +98,23 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home.css'/>
+<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
 </head>
 <body>
-<div id="container"></div>
-<div id="Header">
+<container></container>
+<header>
 	<HeaderText>Chromosome Explorer</HeaderText>
-</div>
-<div id="LeftTab">
+</header>
+<nav>
 	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
-</div>
-<p>The Command is: $request</p>
-<fieldset>
-<p>$results</p>
-</fieldset>
+	<p><a href="#">Chromosome list.</a></p>
+</nav>
+<section>
+	<p>The Command is: $request</p>
+	<fieldset>
+		<p>$results</p>
+	</fieldset>
+</section>
 </body>
 </html>
 EOF
