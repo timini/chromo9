@@ -85,7 +85,8 @@ EOF
 
 sub Summary
 {
-my $request = $cgi->url_param('summary');
+my $request = $cgi->url_param('cmd');
+my $results = FakeList();
 
 print $cgi->header();
 print <<EOF;
@@ -101,9 +102,9 @@ print <<EOF;
 <div id="LeftTab">
 	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
 </div>
+<p>The Command is: $request</p>
 <fieldset>
-<p>The Command is: $cmd</p>
-<p>$summary</p>
+<p>$results</p>
 </fieldset>
 </body>
 </html>

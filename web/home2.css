@@ -1,36 +1,8 @@
-#Container {
- width: 900px;
-}
-
-#Header {
+header {
  height: 50;
  position: relative;
  background-color: #CCFFCC;
- border-bottom: 2px solid #000000;
-}
-
-#leftTab {
- float: left;
- height: 1000px;
- width: 140px;
- background-color:#FFCC00;
- border-right: 2px dashed #694717; 
-}
-
-#Body {
- margin: auto;
- padding: 10px 0px 0px 10px;
-}
-
-#Footer {
- clear: both;
- background-color: #6CF;
-}
-
-#Main {
- width: 500px;
- margin: 20px auto;
- padding: 160px auto;
+ border-bottom: 2px solid #336699;
 }
 
 HeaderText {
@@ -49,3 +21,28 @@ h3 { font: bold italic 14pt Helvetica, Arial, sans-serif; color: red;}
 p { font: 12pt Helvetica, Arial, sans-serif;}
 formwords { font: 10pt Helvetica, Arial, sans-serif;}
 
+.container {
+  position: relative;
+}
+nav {
+  position: absolute;
+  width: 180px;
+  height: 100;
+  border-right: 2px solid #336699;
+  border-bottom: 2px solid #336699;
+}
+section {
+  /* position is static by default */
+  margin-left: 220px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background-color: white;
+  width: 100%;
+}
+body {
+  margin-bottom: 120px;
+}
