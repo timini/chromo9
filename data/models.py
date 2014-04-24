@@ -5,33 +5,6 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship, backref
 
-from .settings import SETTINGS
-
-class Settings:
-    def __init__(self, **attrs):
-        for key, value in attrs.iteritems():
-            if type(value) is dict:
-                attrs[key] = Settings(**value)
-        self.__dict__.update(attrs)
-
-SETTINGS = Settings(**SETTINGS)
-
-if not hasattr(SETTINGS.DB, 'PASSWD'):
-    SETTINGS.DB.PASSWD = raw_input('Enter passwd for mysql user {}'.format(SETTINGS.DB.USER))
-
-conn_string = 'mysql+mysqldb://{user}:{passwd}@{location}:{port}'.format(
-                                            user = SETTINGS.DB.USER,
-                                            passwd = SETTINGS.DB.PASSWD,
-                                            location = SETTINGS.DB.LOCATION,
-                                            port = SETTINGS.DB.PORT,
-                                                                         )
-#engine = create_engine('sqlite:///:memory:')
-engine = create_engine(conn_string, echo=False)
-engine.execute('CREATE DATABASE IF NOT EXISTS {}'.format(SETTINGS.DB.DATABASE_NAME))
-engine.execute('USE {}'.format(SETTINGS.DB.DATABASE_NAME))
-Session = sessionmaker(bind=engine)
-session = Session()
-
 Base = declarative_base()
 
 class Gene(Base):
@@ -71,5 +44,3 @@ class Protein(Base):
     gene_id = Column(Integer, ForeignKey('genes.gene_identifier'))
 
     gene = relationship(Gene, backref='protein_products')
-
-Base.metadata.create_all(engine) # create the tables

@@ -13,4 +13,7 @@ We are hosing on Heroku, unless someone has a better idea / it fails.
 - http://chromo9.herokuapp.com
 - git@heroku.com:chromo9.git
 
+install heroku toolchain:
+-----
 
+- wget -qO- https://toolbelt.heroku.com/install.sh | sh
