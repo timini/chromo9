@@ -1,0 +1,55 @@
+header {
+ height: 50;
+ position: relative;
+ background-color: #CCFFCC;
+ border-bottom: 2px solid #336699;
+}
+
+HeaderText {
+ font: bold 28pt Helvetica, Arial,sans-serif; 
+ color: white;
+ text-shadow:
+   -1px -1px 0 #1F3D5C,  
+    1px -1px 0 #1F3D5C,
+    -1px 1px 0 #1F3D5C,
+     1px 1px 0 #1F3D5C;
+ padding: 10px;
+}
+
+h2 { font: bold 18pt Helvetica, Arial, sans-serif;}
+h3 { font: bold italic 14pt Helvetica, Arial, sans-serif; color: red;}
+p { font: 12pt Helvetica, Arial, sans-serif;}
+formwords { font: 10pt Helvetica, Arial, sans-serif;}
+
+.container {
+  position: relative;
+}
+
+header {
+  height: 50;
+  position: relative;
+  background-color: #CCFFCC;
+  border-bottom: 2px solid #336699;
+}
+nav {
+  position: absolute;
+  width: 180px;
+  height: 100;
+  border-right: 2px solid #336699;
+  border-bottom: 2px solid #336699;
+}
+section {
+  /* position is static by default */
+  margin-left: 220px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background-color: white;
+  width: 100%;
+}
+body {
+  margin-bottom: 120px;
+}
