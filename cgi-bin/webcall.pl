@@ -2,7 +2,7 @@
 use CGI;
 use strict;
 use warnings;
-
+use MiddleLayer_test;
 
 my $search = "";
 my $summary = "";
@@ -16,43 +16,6 @@ Search();
 Summary();
 } elsif ($cmd eq "details") {
 Details();
-}
-
-#-------------------------------
-
-
-sub FakeList
-{
-my $table = "<div id='table'>";
-for (my $count = 10; $count >= 1; $count--) {
- 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=AB98989'>Gene Name: AB98989</a>, gene ID, more details, etc, </div></p>";
-	}
-$table .= "</div>";
-return $table;
-} 
-
-sub List
-{
-my %genes;
-open my $file, '<', 'dummy.csv' or die "Cannot open: $!";
-while (my $line = <$file>) {
-  $line =~ s/\s*\z//;
-  my @array = split /,/, $line;
-  my $integer = shift @array;
-  my $key = shift @array;
-  $genes{$key} = \@array;
-	}
-close $file;
-my $html = "<section>";
-	while (my ($key,$val) = each %genes){
-		$html .= "<p>";
-		$html .= "<a href='#$key'>$key</a>\t\t";
-		foreach (@$val) {
-			 $html.=  "$_</br>";
-		}
-		$html .= "</p>";
-	}
-$html .= </section>;
 }
 
 #-------------------------------
@@ -103,7 +66,7 @@ sub SearchID
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
-my $results = FakeList();
+my $results = MiddleLayer_test::FakeList();
 
 print $cgi->header();
 print <<EOF;
@@ -136,7 +99,7 @@ sub SearchN
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
-my $results = FakeList();
+my $results = MiddleLayer_test::FakeList();
 
 print $cgi->header();
 print <<EOF;
@@ -169,7 +132,7 @@ sub SearchACC
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
-my $results = FakeList();
+my $results = MiddleLayer_test::FakeList();
 
 print $cgi->header();
 print <<EOF;
@@ -202,7 +165,7 @@ sub SearchLOC
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
-my $results = FakeList();
+my $results = MiddleLayer_test::FakeList();
 
 print $cgi->header();
 print <<EOF;
@@ -234,7 +197,7 @@ EOF
 sub Summary
 {
 my $request = $cgi->url_param('cmd');
-my $results = List();
+my $results = MiddleLayer_test::List();
 
 print $cgi->header();
 print <<EOF;
