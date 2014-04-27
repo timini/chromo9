@@ -2,23 +2,67 @@ package MiddleLayer_test;
 use strict;
 use warnings;
 
-sub Dummy
-{
-my %genes;
-open my $file,'<','dummy.csv' or die "Cannot open: $!";
-}
 
 sub FakeList
 {
+my $fakeId = $_[0];
+my @genes = ReadListByID($fakeId);
+
+
 my $table = "<div id='table'>";
 for (my $count = 10; $count >= 1; $count--) {
- 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=AB98989'>Gene Name: AB98989</a>, gene ID, more details, etc, </div></p>";
+ 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
 	}
 $table .= "</div>";
 return $table;
 } 
 
-sub List
+
+
+#=========================================
+# data calls
+
+sub ReadListByID
+{
+	my $id = $_[0];
+	my @genes;
+	for (my $count = 0; $count<=10; $count++) {
+		push(@genes, $count.$id."byID");
+	}
+	return @genes;
+}
+
+sub ReadListByN
+{
+	my $id = $_[0];
+	my @genes;
+	for (my $count = 0; $count<=10; $count++) {
+		push(@genes, $count.$id);
+	}
+	return @genes;
+}
+
+sub ReadListByACC
+{
+	my $id = $_[0];
+	my @genes;
+	for (my $count = 0; $count<=10; $count++) {
+		push(@genes, $count.$id);
+	}
+	return @genes;
+}
+
+sub ReadListByLOC
+{
+	my $id = $_[0];
+	my @genes;
+	for (my $count = 0; $count<=10; $count++) {
+		push(@genes, $count.$id);
+	}
+	return @genes;
+}
+
+sub ReadGenes
 {
 my %genes;
 open my $file, '<', 'dummy.csv' or die "Cannot open: $!";
@@ -30,17 +74,7 @@ while (my $line = <$file>) {
   $genes{$key} = \@array;
 	}
 close $file;
-my $html = "<section>";
-	while (my ($key,$val) = each %genes){
-		$html .= "<p>";
-		$html .= "<a href='#$key'>$key</a>\t\t";
-		foreach (@$val) {
-			 $html.=  "$_</br>";
-		}
-		$html .= "</p>";
-	}
-$html .= </section>;
+return %genes;
 }
-
 
 1;

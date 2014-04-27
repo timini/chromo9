@@ -66,7 +66,7 @@ sub SearchID
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
-my $results = MiddleLayer_test::FakeList();
+my $results = GetListByID($searchString);
 
 print $cgi->header();
 print <<EOF;
@@ -99,7 +99,7 @@ sub SearchN
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
-my $results = MiddleLayer_test::FakeList();
+my $results = GetListByN($searchString);
 
 print $cgi->header();
 print <<EOF;
@@ -132,7 +132,7 @@ sub SearchACC
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
-my $results = MiddleLayer_test::FakeList();
+my $results = GetListByACC($searchString);
 
 print $cgi->header();
 print <<EOF;
@@ -165,7 +165,7 @@ sub SearchLOC
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
-my $results = MiddleLayer_test::FakeList();
+my $results = GetListByLOC($searchString);
 
 print $cgi->header();
 print <<EOF;
@@ -197,7 +197,7 @@ EOF
 sub Summary
 {
 my $request = $cgi->url_param('cmd');
-my $results = MiddleLayer_test::List();
+my $results = GeneList();
 
 print $cgi->header();
 print <<EOF;
@@ -224,6 +224,51 @@ print <<EOF;
 EOF
 }
 
+#---------------------------------------------
 
+sub GeneList
+{
+my %genes = MiddleLayer_test::ReadGenes();
+my $html = "<section>";
+	while (my ($key,$val) = each %genes){
+		$html .= "<p>";
+		$html .= "<a href='#$key'>$key</a>\t\t";
+		foreach (@$val) {
+			 $html.=  "$_</br>";
+		}
+		$html .= "</p>";
+	}
+$html .= </section>;
 
+sub GetListByID
+{
+	my $searchString = $_[0];
 
+	my @genes = MiddleLayer_test::ReadListByID($searchString);
+	
+	my $table = "<div id='table'>";
+	for (my $count = 10; $count >= 1; $count--) {
+	 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
+		}
+	$table .= "</div>";
+	return $table;
+}
+
+sub GetListByN
+{
+	my $searchString = $_[0];
+	return MiddleLayer_test::FakeList($searchString);
+}
+
+sub GetListByACC
+{
+	my $searchString = $_[0];
+	return MiddleLayer_test::FakeList($searchString);
+}
+
+sub GetListByLOC
+{
+	my $searchString = $_[0];
+	return MiddleLayer_test::FakeList($searchString);
+}
+}
