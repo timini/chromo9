@@ -17,6 +17,8 @@ Summary();
 Details();
 }
 
+#-------------------------------
+
 
 sub FakeList
 {
@@ -28,6 +30,32 @@ $table .= "</div>";
 return $table;
 } 
 
+sub List
+{
+my %genes;
+open my $file, '<', 'dummy.csv' or die "Cannot open: $!";
+while (my $line = <$file>) {
+  $line =~ s/\s*\z//;
+  my @array = split /,/, $line;
+  my $integer = shift @array;
+  my $key = shift @array;
+  $genes{$key} = \@array;
+	}
+close $file;
+my $html = "<section>";
+	while (my ($key,$val) = each %genes){
+		$html .= "<p>";
+		$html .= "<a href='#$key'>$key</a>\t\t";
+		foreach (@$val) {
+			 $html.=  "$_</br>";
+		}
+		$html .= "</p>";
+	}
+$html .= </section>;
+}
+
+#-------------------------------
+ 
 sub Details
 {
 my $id = $cgi->param('id');
@@ -92,13 +120,13 @@ EOF
 sub Summary
 {
 my $request = $cgi->url_param('cmd');
-my $results = FakeList();
+my $results = List();
 
 print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+	<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
 </head>
 <body>
 <container></container>
@@ -111,10 +139,9 @@ print <<EOF;
 </nav>
 <section>
 	<p>The Command is: $request</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
 </section>
+
+<p>$results</p>
 </body>
 </html>
 EOF
