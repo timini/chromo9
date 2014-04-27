@@ -57,180 +57,6 @@ $html .= </section>;
 
 #-------------------------------
  
-sub Search
-{
-	my $searchString = $cgi->param('search');
-	my $searchOption = $cgi->param('type');
-	if ($searchOption eq "ID") {
-		SearchByID();
-	} elsif ($searchOption eq "N") {
-		SearchByN();
-	} elsif ($searchOption eq "ACC") {
-		SearchByACC();
-	} elsif ($searchOption eq "LOC") {
-		SearchByLOC();
-	}
-}
-
-sub SearchByID
-{
-#my $results = IDSearch();
-my $results = Fakelist();
-
-print $cgi->header();
-print <<EOF;
-<html>
-<head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
-</head>
-<body>
-<container></container>
-<header>
-	<HeaderText>Chromosome Explorer</HeaderText>
-</header>
-<nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
-	<p><a href="#">Chromosome list.</a></p>
-</nav>
-<section>
-	<p>Gene ID search:</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
-</section>
-</body>
-</html>
-EOF
-}
-
-sub SearchByN
-{
-#my $results = NSearch();
-my $results = Fakelist();
-
-print $cgi->header();
-print <<EOF;
-<html>
-<head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
-</head>
-<body>
-<container></container>
-<header>
-	<HeaderText>Chromosome Explorer</HeaderText>
-</header>
-<nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
-	<p><a href="#">Chromosome list.</a></p>
-</nav>
-<section>
-	<p>Gene Name search:</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
-</section>
-</body>
-</html>
-EOF
-}
-
-sub SearchByACC
-{
-#my $results = ACCSearch();
-my $results = Fakelist();
-
-print $cgi->header();
-print <<EOF;
-<html>
-<head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
-</head>
-<body>
-<container></container>
-<header>
-	<HeaderText>Chromosome Explorer</HeaderText>
-</header>
-<nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
-	<p><a href="#">Chromosome list.</a></p>
-</nav>
-<section>
-	<p>Accession number search:</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
-</section>
-</body>
-</html>
-EOF
-}
-
-sub SearchByLOC
-{
-#my $results = LOCSearch();
-my $results = Fakelist();
-
-print $cgi->header();
-print <<EOF;
-<html>
-<head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
-</head>
-<body>
-<container></container>
-<header>
-	<HeaderText>Chromosome Explorer</HeaderText>
-</header>
-<nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
-	<p><a href="#">Chromosome list.</a></p>
-</nav>
-<section>
-	<p>Gene Locus search:</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
-</section>
-</body>
-</html>
-EOF
-}
-
-
-------
-
-sub Summary
-{
-my $request = $cgi->url_param('cmd');
-my $results = List();
-
-print $cgi->header();
-print <<EOF;
-<html>
-<head>
-	<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
-</head>
-<body>
-<container></container>
-<header>
-	<HeaderText>Chromosome Explorer</HeaderText>
-</header>
-<nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
-	<p><a href="#">Chromosome list.</a></p>
-</nav>
-<section>
-	<p>The Command is: $request</p>
-</section>
-<p>$results</p>
-</body>
-</html>
-EOF
-}
-
-
-------
-
 sub Details
 {
 my $id = $cgi->param('id');
@@ -257,3 +83,184 @@ print <<EOF;
 </html>
 EOF
 }
+
+sub Search
+{
+	my $searchString = $cgi->param('search');
+	my $searchOption = $cgi->param('type');
+	if ($searchOption eq "ID") {
+		SearchID($searchString, $searchOption);
+	} elsif ($searchOption eq "N") {
+		SearchN($searchString, $searchOption);
+	} elsif ($searchOption eq "ACC") {
+		SearchACC($searchString, $searchOption);
+	} elsif ($searchOption eq "LOC") {
+		SearchLOC($searchString, $searchOption);
+	}
+}
+
+sub SearchID
+{
+my $searchString = $_[0];
+my $searchOption = $_[1];
+my $results = FakeList();
+
+print $cgi->header();
+print <<EOF;
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+</head>
+<body>
+<container></container>
+<header>
+	<HeaderText>Chromosome Explorer</HeaderText>
+</header>
+<nav>
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="#">Chromosome list.</a></p>
+</nav>
+<section>
+	<p>Here is a list of genes generated using your search term ($searchString).</p>
+	<p>This search looked through $searchOption.</p>
+	<fieldset>
+		<p>$results</p>
+	</fieldset>
+</section>
+</body>
+</html>
+EOF
+}
+
+sub SearchN
+{
+my $searchString = $_[0];
+my $searchOption = $_[1];
+my $results = FakeList();
+
+print $cgi->header();
+print <<EOF;
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+</head>
+<body>
+<container></container>
+<header>
+	<HeaderText>Chromosome Explorer</HeaderText>
+</header>
+<nav>
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="#">Chromosome list.</a></p>
+</nav>
+<section>
+	<p>Here is a list of genes generated using your search term ($searchString).</p>
+	<p>This search looked through $searchOption.</p>
+	<fieldset>
+		<p>$results</p>
+	</fieldset>
+</section>
+</body>
+</html>
+EOF
+}
+
+sub SearchACC
+{
+my $searchString = $_[0];
+my $searchOption = $_[1];
+my $results = FakeList();
+
+print $cgi->header();
+print <<EOF;
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+</head>
+<body>
+<container></container>
+<header>
+	<HeaderText>Chromosome Explorer</HeaderText>
+</header>
+<nav>
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="#">Chromosome list.</a></p>
+</nav>
+<section>
+	<p>Here is a list of genes generated using your search term ($searchString).</p>
+	<p>This search looked through $searchOption.</p>
+	<fieldset>
+		<p>$results</p>
+	</fieldset>
+</section>
+</body>
+</html>
+EOF
+}
+
+sub SearchLOC
+{
+my $searchString = $_[0];
+my $searchOption = $_[1];
+my $results = FakeList();
+
+print $cgi->header();
+print <<EOF;
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+</head>
+<body>
+<container></container>
+<header>
+	<HeaderText>Chromosome Explorer</HeaderText>
+</header>
+<nav>
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="#">Chromosome list.</a></p>
+</nav>
+<section>
+	<p>Here is a list of genes generated using your search term ($searchString).</p>
+	<p>This search looked through $searchOption.</p>
+	<fieldset>
+		<p>$results</p>
+	</fieldset>
+</section>
+</body>
+</html>
+EOF
+}
+
+sub Summary
+{
+my $request = $cgi->url_param('cmd');
+my $results = List();
+
+print $cgi->header();
+print <<EOF;
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+</head>
+<body>
+<container></container>
+<header>
+	<HeaderText>Chromosome Explorer</HeaderText>
+</header>
+<nav>
+	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="#">Chromosome list.</a></p>
+</nav>
+<section>
+	<p>The Command is: $request</p>
+</section>
+
+<p>$results</p>
+</body>
+</html>
+EOF
+}
+
+
+
+
