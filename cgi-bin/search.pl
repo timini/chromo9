@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 use CGI;
-use BC2;
+
 use strict;
 use warnings;
 my $cgi = new CGI;
