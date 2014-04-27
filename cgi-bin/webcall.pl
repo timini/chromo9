@@ -257,18 +257,41 @@ sub GetListByID
 sub GetListByN
 {
 	my $searchString = $_[0];
-	return MiddleLayer_test::FakeList($searchString);
+
+	my @genes = MiddleLayer_test::ReadListByN($searchString);
+	
+	my $table = "<div id='table'>";
+	for (my $count = 10; $count >= 1; $count--) {
+	 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
+		}
+	$table .= "</div>";
+	return $table;
 }
 
 sub GetListByACC
 {
 	my $searchString = $_[0];
-	return MiddleLayer_test::FakeList($searchString);
+
+	my @genes = MiddleLayer_test::ReadListByACC($searchString);
+	
+	my $table = "<div id='table'>";
+	for (my $count = 10; $count >= 1; $count--) {
+	 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
+		}
+	$table .= "</div>";
+	return $table;
 }
 
 sub GetListByLOC
 {
 	my $searchString = $_[0];
-	return MiddleLayer_test::FakeList($searchString);
-}
+
+	my @genes = MiddleLayer_test::ReadListByLOC($searchString);
+	
+	my $table = "<div id='table'>";
+	for (my $count = 10; $count >= 1; $count--) {
+	 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
+		}
+	$table .= "</div>";
+	return $table;
 }
