@@ -228,8 +228,8 @@ EOF
 
 sub GeneList
 {
-my %genes = MiddleLayer_test::ReadGenes();
-my $html = "<section>";
+	my %genes = MiddleLayer_test::ReadGenes();
+	my $html = "<section>";
 	while (my ($key,$val) = each %genes){
 		$html .= "<p>";
 		$html .= "<a href='#$key'>$key</a>\t\t";
@@ -238,7 +238,8 @@ my $html = "<section>";
 		}
 		$html .= "</p>";
 	}
-$html .= </section>;
+	$html .= </section>;
+}
 
 sub GetListByID
 {
