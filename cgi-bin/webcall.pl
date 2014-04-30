@@ -86,9 +86,7 @@ print <<EOF;
 <section>
 	<p>Here is a list of genes generated using your search term ($searchString).</p>
 	<p>This search looked through $searchOption.</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
+	<p>$results</p>
 </section>
 </body>
 </html>
@@ -119,9 +117,7 @@ print <<EOF;
 <section>
 	<p>Here is a list of genes generated using your search term ($searchString).</p>
 	<p>This search looked through $searchOption.</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
+	<p>$results</p>
 </section>
 </body>
 </html>
@@ -152,9 +148,7 @@ print <<EOF;
 <section>
 	<p>Here is a list of genes generated using your search term ($searchString).</p>
 	<p>This search looked through $searchOption.</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
+	<p>$results</p>
 </section>
 </body>
 </html>
@@ -185,9 +179,7 @@ print <<EOF;
 <section>
 	<p>Here is a list of genes generated using your search term ($searchString).</p>
 	<p>This search looked through $searchOption.</p>
-	<fieldset>
-		<p>$results</p>
-	</fieldset>
+	<p>$results</p>
 </section>
 </body>
 </html>
@@ -241,59 +233,58 @@ sub GeneList
 	return $html;	
 }
 
-
 sub GetListByID
 {
 	my $searchString = $_[0];
 
-	my @genes = MiddleLayer_test::ReadListByID($searchString);
-	
-	my $table = "<div id='table'>";
-	for (my $count = 10; $count >= 1; $count--) {
-	 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
-		}
-	$table .= "</div>";
-	return $table;
+	my @genes = MiddleLayer_test::ReadListByID();
+	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
+	foreach my $row (@genes) {
+		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
+	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
+	}
+	$html .= "</table>";
+	return $html;	
 }
 
 sub GetListByN
 {
 	my $searchString = $_[0];
 
-	my @genes = MiddleLayer_test::ReadListByN($searchString);
-	
-	my $table = "<div id='table'>";
-	for (my $count = 10; $count >= 1; $count--) {
-	 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
-		}
-	$table .= "</div>";
-	return $table;
+	my @genes = MiddleLayer_test::ReadListByN();
+	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
+	foreach my $row (@genes) {
+		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
+	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
+	}
+	$html .= "</table>";
+	return $html;	
 }
 
 sub GetListByACC
 {
 	my $searchString = $_[0];
 
-	my @genes = MiddleLayer_test::ReadListByACC($searchString);
-	
-	my $table = "<div id='table'>";
-	for (my $count = 10; $count >= 1; $count--) {
-	 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
-		}
-	$table .= "</div>";
-	return $table;
+	my @genes = MiddleLayer_test::ReadListByACC();
+	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
+	foreach my $row (@genes) {
+		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
+	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
+	}
+	$html .= "</table>";
+	return $html;	
 }
 
 sub GetListByLOC
 {
 	my $searchString = $_[0];
 
-	my @genes = MiddleLayer_test::ReadListByLOC($searchString);
-	
-	my $table = "<div id='table'>";
-	for (my $count = 10; $count >= 1; $count--) {
-	 	$table .= "<p><div class='row'><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$genes[$count]'>Gene Name: $genes[$count]</a>, gene ID, more details, etc, </div></p>";
-		}
-	$table .= "</div>";
-	return $table;
+	my @genes = MiddleLayer_test::ReadListByLOC();
+	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
+	foreach my $row (@genes) {
+		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
+	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
+	}
+	$html .= "</table>";
+	return $html;	
 }

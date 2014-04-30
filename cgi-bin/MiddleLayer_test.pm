@@ -24,42 +24,54 @@ return $table;
 
 sub ReadListByID
 {
-	my $id = $_[0];
-	my @genes;
-	for (my $count = 0; $count<=10; $count++) {
-		push(@genes, $count.$id."byID");
+my $id = $_[0];
+my @list;
+open my $file, '<', 'genesummary.txt' or die "Cannot open: $!";
+while (my $line = <$file>) {
+	chomp $line;
+	push @list, $line;
 	}
-	return @genes;
+close $file;
+return @list;
 }
 
 sub ReadListByN
 {
-	my $id = $_[0];
-	my @genes;
-	for (my $count = 0; $count<=10; $count++) {
-		push(@genes, $count.$id);
+my $id = $_[0];
+my @list;
+open my $file, '<', 'genesummary.txt' or die "Cannot open: $!";
+while (my $line = <$file>) {
+	chomp $line;
+	push @list, $line;
 	}
-	return @genes;
+close $file;
+return @list;
 }
 
 sub ReadListByACC
 {
-	my $id = $_[0];
-	my @genes;
-	for (my $count = 0; $count<=10; $count++) {
-		push(@genes, $count.$id);
+my $id = $_[0];
+my @list;
+open my $file, '<', 'genesummary.txt' or die "Cannot open: $!";
+while (my $line = <$file>) {
+	chomp $line;
+	push @list, $line;
 	}
-	return @genes;
+close $file;
+return @list;
 }
 
 sub ReadListByLOC
 {
-	my $id = $_[0];
-	my @genes;
-	for (my $count = 0; $count<=10; $count++) {
-		push(@genes, $count.$id);
+my $id = $_[0];
+my @list;
+open my $file, '<', 'genesummary.txt' or die "Cannot open: $!";
+while (my $line = <$file>) {
+	chomp $line;
+	push @list, $line;
 	}
-	return @genes;
+close $file;
+return @list;
 }
 
 
