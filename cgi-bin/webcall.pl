@@ -197,7 +197,7 @@ EOF
 sub Summary
 {
 my $request = $cgi->url_param('cmd');
-my $results = GeneList();
+my $results = GeneList2();
 
 print $cgi->header();
 print <<EOF;
@@ -215,10 +215,12 @@ print <<EOF;
 	<p><a href="#">Chromosome list.</a></p>
 </nav>
 <section>
-	<p>The Command is: $request</p>
+	<p>The following is a summary of all the genes found in the chromo9 genbank file.</p>
 </section>
 
-<p>$results</p>
+<section>
+	$results
+</section>
 </body>
 </html>
 EOF
@@ -240,6 +242,19 @@ sub GeneList
 	}
 	$html .= </section>;
 }
+
+sub GeneList2
+{
+	my @genes = MiddleLayer_test::ReadGenes2();
+	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
+	foreach my $row (@genes) {
+		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
+	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
+	}
+	$html .= "</table>";
+	return $html;	
+}
+
 
 sub GetListByID
 {

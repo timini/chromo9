@@ -77,4 +77,18 @@ close $file;
 return %genes;
 }
 
+sub ReadGenes2
+{
+my @list;
+open my $file, '<', 'genesummary.txt' or die "Cannot open: $!";
+while (my $line = <$file>) {
+	chomp $line;
+	push @list, $line;
+	}
+close $file;
+return @list;
+
+}
+
+
 1;
