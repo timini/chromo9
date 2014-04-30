@@ -62,22 +62,8 @@ sub ReadListByLOC
 	return @genes;
 }
 
-sub ReadGenes
-{
-my %genes;
-open my $file, '<', 'dummy.csv' or die "Cannot open: $!";
-while (my $line = <$file>) {
-  $line =~ s/\s*\z//;
-  my @array = split /,/, $line;
-  my $integer = shift @array;
-  my $key = shift @array;
-  $genes{$key} = \@array;
-	}
-close $file;
-return %genes;
-}
 
-sub ReadGenes2
+sub ReadGenes
 {
 my @list;
 open my $file, '<', 'genesummary.txt' or die "Cannot open: $!";

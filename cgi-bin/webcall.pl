@@ -197,7 +197,7 @@ EOF
 sub Summary
 {
 my $request = $cgi->url_param('cmd');
-my $results = GeneList2();
+my $results = GeneList();
 
 print $cgi->header();
 print <<EOF;
@@ -215,7 +215,7 @@ print <<EOF;
 	<p><a href="#">Chromosome list.</a></p>
 </nav>
 <section>
-	<p>The following is a summary of all the genes found in the chromo9 genbank file.</p>
+	<p>The following is a summary of all the genes found in the Chromosome 9 genbank data dump.</p>
 </section>
 
 <section>
@@ -228,24 +228,10 @@ EOF
 
 #---------------------------------------------
 
+
 sub GeneList
 {
-	my %genes = MiddleLayer_test::ReadGenes();
-	my $html = "<section>";
-	while (my ($key,$val) = each %genes){
-		$html .= "<p>";
-		$html .= "<a href='#$key'>$key</a>\t\t";
-		foreach (@$val) {
-			 $html.=  "$_</br>";
-		}
-		$html .= "</p>";
-	}
-	$html .= </section>;
-}
-
-sub GeneList2
-{
-	my @genes = MiddleLayer_test::ReadGenes2();
+	my @genes = MiddleLayer_test::ReadGenes();
 	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
 	foreach my $row (@genes) {
 		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
