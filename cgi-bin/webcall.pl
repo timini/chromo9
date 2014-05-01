@@ -9,12 +9,12 @@ use MiddleLayer;
 # parameterise URIs to allow local machine development
 
 # -- production server 
-#my $cgiHome = "http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01";
-#my $webHome = "http://student.cryst.bbk.ac.uk/~gseed01/web";
+my $cgiHome = "http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01";
+my $webHome = "http://student.cryst.bbk.ac.uk/~gseed01/web";
 
 # -- local test server
-my $cgiHome = "http://localhost/cgi-bin/hgeorg02";
-my $webHome = "http://localhost";
+#my $cgiHome = "http://localhost/cgi-bin/hgeorg02";
+#my $webHome = "http://localhost";
 
 my $cgi = new CGI;
 my $cmd = $cgi->url_param('cmd');
@@ -32,6 +32,8 @@ Details();
 sub Details
 {
 my $id = $cgi->param('id');
+my $nucleotides = RenderNucleotides($id);
+my $results = GetListByID($id);
 
 print $cgi->header();
 print <<EOF;
@@ -50,6 +52,12 @@ print <<EOF;
 </nav>
 <section>
 	<p>You successfully looked for gene $id</p>
+	<p>The protein products are:
+	<p>$results</p>
+	<p>The nucleotide sequence is below, with coding regions indicated by 'E':</p>
+</section>
+<section>
+	$nucleotides
 </section>
 </body>
 </html>
@@ -241,6 +249,46 @@ sub RenderTable
 	
 }
 
+sub GetNucleotides
+{
+	my $id = $_[0];
+	my $dna = ReadNucleotides($id);
+	foreach my $row (@{$dna}){
+		my ($seq) = @{$row};
+		return $seq;
+	} 
+}
+
+sub GetExons
+{
+	my $id = $_[0];
+	my $exons = ReadExons($id);
+	@$exons = sort {$b->[1] <=> $a->[1] || $b->[2] <=> $a->[2] } @$exons;
+	return $exons;
+}
+
+sub RenderNucleotides
+{
+	my $id = $_[0];
+	my $dna = GetNucleotides($id);
+	my $ruler = Ruler($dna);
+	my $len = length($dna);
+	my $exons = ExtractExons($dna,GetExons($id));
+	# $exons =~ tr/ACGT./....E/;
+	my $html = "<table class='DNA'>";
+	for (my $i=0; $i<$len; $i+=100) {
+		$html .= "<tr><td><pre></pre></td></tr>";
+		my $str = substr($ruler,$i,100);
+		$html .= "<tr><td><pre>$str</pre></td></tr>";
+		$str = substr($dna,$i,100);
+		$html .= "<tr><td><pre>$str</pre></td></tr>";
+		$str = substr($exons,$i,100);
+		$html .= "<tr><td><pre>$str</pre></td></tr>";
+	}
+	$html .= "</table>";
+	return $html;	
+}
+
 sub GeneList
 {
 	my $genes = ReadGenes();
@@ -279,3 +327,4 @@ sub GetListByLOC
 	my $html = RenderTable($genes);
 	return $html;	
 }
+

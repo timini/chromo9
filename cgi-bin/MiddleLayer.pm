@@ -23,6 +23,7 @@ BEGIN {
    		&ReadNucleotides
    		&TranslateDNA
    		&RemoveExons
+		&ExtractExons
    		&ReadGenesWithProblemExons
    		&Ruler
    	);
@@ -46,15 +47,15 @@ my %localDB = (
 
 # -- main production db ---
 my %prodDB = ( 
-	db_name     => "chromo9",
+	db_name     => "gseed01",
 	db_user     => "gseed01",
 	db_password => "4ajy5q-si",
 	db_host     => "localhost"
 );
 
 # -- database to use ---
-#my %db = %prodDB;
-my %db = %localDB;
+my %db = %prodDB;
+#my %db = %localDB;
 
 
 # ----------------------------
@@ -400,17 +401,20 @@ sub ReadGenesWithProblemExons
 	return \@invalid;
 }
 
+
 #--------------------------------------------
-# replqace Exon nucleotides with '.' 
+# Extract Exon nucleotides with '.' 
 # keeping rest as normal
 # substitution and translation can be used easily
 # on the result
 #
-sub RemoveExons
+sub ExtractExons
 {
 	my $dna = $_[0];
 	my $len = length($dna);
 	my $exon_ref = $_[1];
+
+	my $result = '.' x length($dna);
 
 	# sort in reverse order to make life simpler	
 	@$exon_ref = sort {$b->[1] <=> $a->[1] || $b->[2] <=> $a->[2] } @$exon_ref;
@@ -419,15 +423,14 @@ sub RemoveExons
 		if ($xend > $len-1) {
 			$xend = $len-1;
 		}
-		my $dots = "." x ($xend-$xstart+1);
-		substr($dna, $xstart, $xend-$xstart+1, $dots);
+		substr($result, $xstart, $xend-$xstart+1, substr($dna, $xstart, $xend-$xstart+1));
 	}
-	return $dna;
+	return $result;
 }
 
 #------------------------------------------
 # a numbered string used as a ruler for DNA 
-# or protrein sequences
+# or protein sequences
 
 sub Ruler
 {
