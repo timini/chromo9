@@ -2,6 +2,23 @@ package MiddleLayer_test;
 use strict;
 use warnings;
 
+require Exporter;
+BEGIN {
+   use Exporter   ();
+   use vars       qw($VERSION @ISA @EXPORT);
+   # set the version for version checking
+   $VERSION     = 1.00;
+   @ISA         = qw(Exporter);
+   @EXPORT      = qw(
+   		&FakeList
+   		&getGenes 
+   		&ReadListByID 
+   		&ReadListByLOC
+   		&ReadListByN
+   		&ReadListByACC
+   	);
+}
+
 
 sub FakeList
 {
