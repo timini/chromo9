@@ -1,11 +1,20 @@
 #!/usr/bin/perl
 use CGI;
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 use warnings;
-use MiddleLayer_test;
+use MiddleLayer;
 
-my $search = "";
-my $summary = "";
+#----------------------------------------------
+# parameterise URIs to allow local machine development
+
+# -- production server 
+#my $cgiHome = "http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01";
+#my $webHome = "http://student.cryst.bbk.ac.uk/~gseed01/web";
+
+# -- local test server
+my $cgiHome = "http://localhost/cgi-bin/hgeorg02";
+my $webHome = "http://localhost";
 
 my $cgi = new CGI;
 my $cmd = $cgi->url_param('cmd');
@@ -28,7 +37,7 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+<link rel='stylesheet' type='text/css' href='$webHome/home2.css'/>
 </head>
 <body>
 <container></container>
@@ -36,7 +45,7 @@ print <<EOF;
 	<HeaderText>Chromosome Explorer</HeaderText>
 </header>
 <nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="$webHome/index.html">Return to home page?</a></p>
 	<p><a href="#">Chromosome list.</a></p>
 </nav>
 <section>
@@ -72,7 +81,7 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+<link rel='stylesheet' type='text/css' href='$webHome/home2.css'/>
 </head>
 <body>
 <container></container>
@@ -80,7 +89,7 @@ print <<EOF;
 	<HeaderText>Chromosome Explorer</HeaderText>
 </header>
 <nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="$webHome/index.html">Return to home page?</a></p>
 	<p><a href="#">Chromosome list.</a></p>
 </nav>
 <section>
@@ -103,7 +112,7 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+<link rel='stylesheet' type='text/css' href='$webHome/home2.css'/>
 </head>
 <body>
 <container></container>
@@ -111,7 +120,7 @@ print <<EOF;
 	<HeaderText>Chromosome Explorer</HeaderText>
 </header>
 <nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="$webHome/index.html">Return to home page?</a></p>
 	<p><a href="#">Chromosome list.</a></p>
 </nav>
 <section>
@@ -134,7 +143,7 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+<link rel='stylesheet' type='text/css' href='$webHome/home2.css'/>
 </head>
 <body>
 <container></container>
@@ -142,7 +151,7 @@ print <<EOF;
 	<HeaderText>Chromosome Explorer</HeaderText>
 </header>
 <nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="$webHome/index.html">Return to home page?</a></p>
 	<p><a href="#">Chromosome list.</a></p>
 </nav>
 <section>
@@ -165,7 +174,7 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+<link rel='stylesheet' type='text/css' href='$webHome/home2.css'/>
 </head>
 <body>
 <container></container>
@@ -173,7 +182,7 @@ print <<EOF;
 	<HeaderText>Chromosome Explorer</HeaderText>
 </header>
 <nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="$webHome/index.html">Return to home page?</a></p>
 	<p><a href="#">Chromosome list.</a></p>
 </nav>
 <section>
@@ -195,7 +204,7 @@ print $cgi->header();
 print <<EOF;
 <html>
 <head>
-	<link rel='stylesheet' type='text/css' href='http://student.cryst.bbk.ac.uk/~gseed01/web/home2.css'/>
+	<link rel='stylesheet' type='text/css' href='$webHome/home2.css'/>
 </head>
 <body>
 <container></container>
@@ -203,7 +212,7 @@ print <<EOF;
 	<HeaderText>Chromosome Explorer</HeaderText>
 </header>
 <nav>
-	<p><a href="http://student.cryst.bbk.ac.uk/~gseed01/web/index.html">Return to home page?</a></p>
+	<p><a href="$webHome/index.html">Return to home page?</a></p>
 	<p><a href="#">Chromosome list.</a></p>
 </nav>
 <section>
@@ -220,71 +229,53 @@ EOF
 
 #---------------------------------------------
 
+sub RenderTable
+{
+	my $genes = $_[0];
+	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
+	foreach my $row (@{$genes}) {
+		my ($ID, $N, $ACC, $LOC) = @{$row};
+	 	$html .= "<tr><td><a href='$cgiHome/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
+	}
+	$html .= "</table>";
+	
+}
 
 sub GeneList
 {
-	my @genes = MiddleLayer_test::ReadGenes();
-	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
-	foreach my $row (@genes) {
-		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
-	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
-	}
-	$html .= "</table>";
+	my $genes = ReadGenes();
+	my $html = RenderTable($genes);
 	return $html;	
 }
 
 sub GetListByID
 {
-	my $searchString = $_[0];
-
-	my @genes = MiddleLayer_test::ReadListByID();
-	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
-	foreach my $row (@genes) {
-		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
-	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
-	}
-	$html .= "</table>";
+	my $searchID = $_[0];
+	my $genes = ReadListByID($searchID);
+	my $html = RenderTable($genes);
 	return $html;	
 }
 
 sub GetListByN
 {
-	my $searchString = $_[0];
-
-	my @genes = MiddleLayer_test::ReadListByN();
-	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
-	foreach my $row (@genes) {
-		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
-	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
-	}
-	$html .= "</table>";
+	my $searchN = $_[0];
+	my $genes = ReadListByN($searchN);
+	my $html = RenderTable($genes);
 	return $html;	
 }
 
 sub GetListByACC
 {
-	my $searchString = $_[0];
-
-	my @genes = MiddleLayer_test::ReadListByACC();
-	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
-	foreach my $row (@genes) {
-		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
-	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
-	}
-	$html .= "</table>";
+	my $searchACC = $_[0];
+	my $genes = ReadListByACC($searchACC);
+	my $html = RenderTable($genes);
 	return $html;	
 }
 
 sub GetListByLOC
 {
-	my $searchString = $_[0];
-
-	my @genes = MiddleLayer_test::ReadListByLOC();
-	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
-	foreach my $row (@genes) {
-		my ($ID, $N, $ACC, $LOC) = split /\|\|/,$row;
-	 	$html .= "<tr><td><a href='http://student.cryst.bbk.ac.uk/cgi-bin/cgiwrap/gseed01/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
-	}
-	$html .= "</table>";
+	my $searchLOC = $_[0];
+	my $genes = ReadListByLOC($searchLOC);
+	my $html = RenderTable($genes);
 	return $html;	
 }
