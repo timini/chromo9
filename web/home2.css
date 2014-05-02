@@ -1,9 +1,6 @@
-header {
- height: 50;
- position: relative;
- background-color: #CCFFCC;
- border-bottom: 2px solid #336699;
-}
+/*CSS for styling main page and generated pages*/
+
+/*Various text modifications*/
 HeaderText {
  font: 28pt "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
  color: white;
@@ -19,6 +16,7 @@ h3 { font: bold italic 14pt "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans
 p { font: 12pt "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;}
 formwords { font: 10pt "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;}
 
+/*Standard structure code for page elements */
 .container {
   position: relative;
 }
@@ -42,6 +40,8 @@ section {
   display: block;
   min-width: 400px;
 }
+
+/* Footer currently not used - included here as a template in the case of a footer being added at a later date.*/
 footer {
   position: fixed;
   bottom: 0;
@@ -56,6 +56,8 @@ body {
 .spacer {
  width: 10em;
 } 
+
+/*Rest is all table formatting for two classes of table - the 'search results' or 'gene info' types*/
 table {
   max-width: 800px;
   min-width: 400px;
