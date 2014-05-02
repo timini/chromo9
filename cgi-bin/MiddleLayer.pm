@@ -24,6 +24,7 @@ BEGIN {
    		&TranslateDNA
    		&RemoveExons
 		&ExtractExons
+		&TranslateExons
    		&ReadGenesWithProblemExons
    		&Ruler
    	);
@@ -54,8 +55,8 @@ my %prodDB = (
 );
 
 # -- database to use ---
-my %db = %prodDB;
-#my %db = %localDB;
+#my %db = %prodDB;
+my %db = %localDB;
 
 
 # ----------------------------
@@ -130,6 +131,27 @@ my (%CodonMap) = (
 	'XXX'=>'X', #undefined
 	'EEE'=>'X', #undefined
 	'...'=>'.', #undefined
+	
+	'A..'=>'X', #incomplete
+	'C..'=>'X', #incomplete
+	'G..'=>'X', #incomplete
+	'T..'=>'X', #incomplete
+	'AA.'=>'X', #incomplete
+	'AC.'=>'X', #incomplete
+	'AG.'=>'X', #incomplete
+	'AT.'=>'X', #incomplete
+	'CA.'=>'X', #incomplete
+	'CC.'=>'X', #incomplete
+	'CG.'=>'X', #incomplete
+	'CT.'=>'X', #incomplete
+	'GA.'=>'X', #incomplete
+	'GC.'=>'X', #incomplete
+	'GG.'=>'X', #incomplete
+	'GT.'=>'X', #incomplete
+	'TA.'=>'X', #incomplete
+	'TC.'=>'X', #incomplete
+	'TG.'=>'X', #incomplete
+	'TT.'=>'X', #incomplete
 );
 
 
@@ -425,6 +447,38 @@ sub ExtractExons
 		}
 		substr($result, $xstart, $xend-$xstart+1, substr($dna, $xstart, $xend-$xstart+1));
 	}
+	return $result;
+}
+
+#--------------------------------------------
+# Translate Coding Regions 
+# impartial codons will be set to X
+#
+sub TranslateExons
+{
+	my $dna = $_[0];
+	my $len = length($dna);
+	my $result = '.' x length($dna);
+	
+    my @matches;
+    if (substr($dna,0,1) ne '.') {
+    	push @matches, 1;
+    }
+    while ($dna =~ /\.[ACGT]/g) {
+        push @matches, [ $+[0] ];
+    }
+	foreach my $m (@matches) {
+		my $startLoc = $m->[0];
+		my $i = $startLoc-1;	
+		my $codon = substr($dna, $i, 3);
+		while ($codon ne "..." && length($codon)==3) {
+			my $protein = " ".$CodonMap{$codon}." ";
+			substr($result, $i, 3, $protein);
+			$i += 3;
+			$codon = substr($dna, $i, 3);
+		}
+	}
+	
 	return $result;
 }
 
