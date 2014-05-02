@@ -34,6 +34,7 @@ sub Details
 my $id = $cgi->param('id');
 my $nucleotides = RenderNucleotides($id);
 my $results = GetListByID($id);
+my $frequency = GetFrequency($id);
 
 print $cgi->header();
 print <<EOF;
@@ -54,10 +55,14 @@ print <<EOF;
 	<p>You successfully looked for gene $id</p>
 	<p>The protein products are:
 	<p>$results</p>
-	<p>The nucleotide sequence is below, with coding regions indicated by 'E':</p>
+	<p>The nucleotide sequence is below, with exons indicated and translated, followed by codon frequency information below:</p>
 </section>
 <section>
 	$nucleotides
+</section>
+</br>
+<section>
+	$frequency
 </section>
 </body>
 </html>
@@ -274,8 +279,10 @@ sub RenderNucleotides
 	my $ruler = Ruler($dna);
 	my $len = length($dna);
 	my $exons = ExtractExons($dna,GetExons($id));
+	my $translated = TranslateExons($exons);
 	# $exons =~ tr/ACGT./....E/;
 	my $html = "<table class='DNA'>";
+	$html .= "<tr><td><pre>Ruler</pre></td></tr><tr><td><pre>Nucleotide Sequence</pre></td></tr><tr><td><pre>Coding Regions</pre></td></tr><tr><td><pre>Amino Acid Sequence</pre></td></tr>";
 	for (my $i=0; $i<$len; $i+=100) {
 		$html .= "<tr><td><pre></pre></td></tr>";
 		my $str = substr($ruler,$i,100);
@@ -284,9 +291,18 @@ sub RenderNucleotides
 		$html .= "<tr><td><pre>$str</pre></td></tr>";
 		$str = substr($exons,$i,100);
 		$html .= "<tr><td><pre>$str</pre></td></tr>";
+		$str = substr($translated,$i,100);
+		$html .= "<tr><td><pre>$str</pre></td></tr>";
 	}
 	$html .= "</table>";
 	return $html;	
+}
+
+sub GetFrequency
+{
+	my $id = $_[0];
+	my $frequency = "<table><tr><td>Codon Frequencies for $id</td></tr></table>";
+	return $frequency;
 }
 
 sub GeneList

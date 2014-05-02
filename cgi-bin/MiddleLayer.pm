@@ -55,8 +55,8 @@ my %prodDB = (
 );
 
 # -- database to use ---
-#my %db = %prodDB;
-my %db = %localDB;
+my %db = %prodDB;
+#my %db = %localDB;
 
 
 # ----------------------------
@@ -65,7 +65,7 @@ my %db = %localDB;
 my (%CodonMap) = (
 	'TCA'=>'S', #Serine
 	'TCC'=>'S', #Serine
-	'TCG'=>'S',  #Serine
+	'TCG'=>'S', #Serine
 	'TCT'=>'S', #Serine
 	'TTC'=>'F', #Phenylalanine
 	'TTT'=>'F', #Phenylalanine
