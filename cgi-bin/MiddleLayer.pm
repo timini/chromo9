@@ -13,6 +13,7 @@ BEGIN {
    $VERSION     = 1.00;
    @ISA         = qw(Exporter);
    @EXPORT      = qw(
+   		&AminoAcid
    		&ReadGenes 
    		&ReadListByID 
    		&ReadListByLOC
@@ -25,6 +26,7 @@ BEGIN {
    		&RemoveExons
 		&ExtractExons
 		&TranslateExons
+		&CodonFrequencies
    		&ReadGenesWithProblemExons
    		&Ruler
    	);
@@ -129,7 +131,7 @@ my (%CodonMap) = (
 	'GGT'=>'G', #Glycine
 	
 	'XXX'=>'X', #undefined
-	'EEE'=>'X', #undefined
+	'EEE'=>'X', #undefined$CodonMap{$codon}
 	'...'=>'.', #undefined
 	
 	'A..'=>'X', #incomplete
@@ -154,7 +156,10 @@ my (%CodonMap) = (
 	'TT.'=>'X', #incomplete
 );
 
-
+sub AminoAcid
+{
+	return $CodonMap{$_[0]};
+}
 
 #-----------------------------
 # get  all gene summaries from database
@@ -481,6 +486,53 @@ sub TranslateExons
 	
 	return $result;
 }
+
+
+
+
+
+
+
+#--------------------------------------------
+# Calculate Frequencies of Coding Regions 
+#
+sub CodonFrequencies
+{
+	my $dna = $_[0];
+	my $len = length($dna);
+	
+	my %codonUsage;
+	while (my ($key, $value) = each %CodonMap )
+	{
+		if (-1 < index("ACDEFGHIKLMNPQRSTVWY_",$value)) {
+			$codonUsage{$key} += 0;
+		}
+	}
+	
+    my @matches;
+    if (substr($dna,0,1) ne '.') {
+    	push @matches, 1;
+    }
+    while ($dna =~ /\.[ACGT]/g) {
+        push @matches, [ $+[0] ];
+    }
+	foreach my $m (@matches) {
+		my $startLoc = $m->[0];
+		my $i = $startLoc-1;	
+		my $codon = substr($dna, $i, 3);
+		while ($codon ne "..." && length($codon)==3) {
+			my $protein = $CodonMap{$codon};
+			if (-1 < index("ACDEFGHIKLMNPQRSTVWY_",$protein)) {
+				$codonUsage{$codon} += 1;
+			}
+
+			$i += 3;
+			$codon = substr($dna, $i, 3);
+		}
+	}
+	return \%codonUsage;
+}
+
 
 #------------------------------------------
 # a numbered string used as a ruler for DNA 

@@ -14,7 +14,7 @@ my $webHome = "http://student.cryst.bbk.ac.uk/~gseed01/web";
 
 # -- local test server
 #my $cgiHome = "http://localhost/cgi-bin/hgeorg02";
-#my $webHome = "http://localhost";
+#my $webHome = "http://localhost/chromo9";
 
 my $cgi = new CGI;
 my $cmd = $cgi->url_param('cmd');
@@ -298,10 +298,62 @@ sub RenderNucleotides
 	return $html;	
 }
 
+sub Percent
+{
+	my ($value, $total) = @_;
+	return (sprintf("%5.2f\%", $total == 0 ? 0 : 100.0*$value/$total)); 
+}
+
 sub GetFrequency
 {
 	my $id = $_[0];
-	my $frequency = "<table><tr><td>Codon Frequencies for $id</td></tr></table>";
+	my $dna = GetNucleotides($id);
+	my $exons = ExtractExons($dna,GetExons($id));
+	my $freq = CodonFrequencies($exons);
+	my @keys = sort { $freq->{$b} <=> $freq->{$a} || AminoAcid($a) cmp AminoAcid($b) || $a cmp $b } keys(%$freq);
+	my $total = 0;
+	my %totals;
+	($total+=$_) for (values(%$freq));
+	($totals{AminoAcid($_)}=0) for (keys(%$freq));
+	($totals{AminoAcid($_)}+=$freq->{$_}) for (keys(%$freq));
+	
+	
+	my $frequency = "<table class='DNA'><tr><td>Codon</td><td>AA</td><td>Freq</td><td>Ratio</td></tr>";
+	my $i = 0;
+	$frequency .= "<tr>";
+	for my $k1 (("A","C","G","T")) {
+		for my $k2 (("A","C","G","T")) {
+			for my $k3 (("A","C","G","T")) {
+				my $key = $k1.$k2.$k3;
+				my $val= $freq->{$key};
+				my $aa = AminoAcid($key);
+				my $aaTotal = $totals{$aa};
+				my $pct = Percent($val, $total);
+				my $ratio = Percent($val, $totals{$aa});
+				
+				$frequency .= "<td>$key</td><td>$aa</td><td>$pct</td><td>$ratio</td>";
+				$i++;
+				if (($i%4)== 0) {
+					$frequency .= "</tr><tr>";
+				}
+			}
+		}
+	}
+#	foreach my $key (@keys){
+#		my $val= $freq->{$key};
+#		my $aa = AminoAcid($key);
+#		my $aaTotal = $totals{$aa};
+#		my $pct = Percent($val, $total);
+#		my $ratio = Percent($val, $totals{$aa});
+#		
+#		$frequency .= "<td>$key = $aa</td><td>$pct%</td><td>$ratio%</td>";
+#		$i++;
+#		if (($i%4)== 0) {
+#			$frequency .= "</tr><tr>";
+#		}
+#	}
+	$frequency .= "</tr>";
+	$frequency .= "</table>";
 	return $frequency;
 }
 
