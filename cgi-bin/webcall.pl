@@ -16,6 +16,9 @@ my $webHome = "http://student.cryst.bbk.ac.uk/~gseed01/web";
 #my $cgiHome = "http://localhost/cgi-bin/hgeorg02";
 #my $webHome = "http://localhost/chromo9";
 
+#--------------------------------
+#Basic introductory code to point commands in the right place.
+
 my $cgi = new CGI;
 my $cmd = $cgi->url_param('cmd');
 
@@ -28,8 +31,8 @@ Details();
 }
 
 #-------------------------------
- 
-sub Details
+
+sub Details #Subroutine to generate the 'details' page of the website.
 {
 my $id = $cgi->param('id');
 my $nucleotides = RenderNucleotides($id);
@@ -69,7 +72,7 @@ print <<EOF;
 EOF
 }
 
-sub Search
+sub Search #Subroutine to point the search commands to more specific subroutine.
 {
 	my $searchString = $cgi->param('search');
 	my $searchOption = $cgi->param('type');
@@ -84,7 +87,7 @@ sub Search
 	}
 }
 
-sub SearchID
+sub SearchID #Generates the search page when the user has selected 'ID' as the parameter.
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
@@ -115,7 +118,7 @@ print <<EOF;
 EOF
 }
 
-sub SearchN
+sub SearchN #Generates the search page when the user has selected 'Name' as the parameter.
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
@@ -146,7 +149,7 @@ print <<EOF;
 EOF
 }
 
-sub SearchACC
+sub SearchACC #Generates the search page when the user has selected 'Accession Number' as the parameter.
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
@@ -177,7 +180,7 @@ print <<EOF;
 EOF
 }
 
-sub SearchLOC
+sub SearchLOC #Generates the search page when the user has selected 'Location' as the parameter.
 {
 my $searchString = $_[0];
 my $searchOption = $_[1];
@@ -208,7 +211,7 @@ print <<EOF;
 EOF
 }
 
-sub Summary
+sub Summary #Generates the page for the summary list of genes.
 {
 my $request = $cgi->url_param('cmd');
 my $results = GeneList();
@@ -242,7 +245,7 @@ EOF
 
 #---------------------------------------------
 
-sub RenderTable
+sub RenderTable #Used for search results/summary table html rendering
 {
 	my $genes = $_[0];
 	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Location</th>";
@@ -254,7 +257,7 @@ sub RenderTable
 	
 }
 
-sub GetNucleotides
+sub GetNucleotides #Pulls out the list of nucleotides from the middlelayer.pm search
 {
 	my $id = $_[0];
 	my $dna = ReadNucleotides($id);
@@ -264,7 +267,7 @@ sub GetNucleotides
 	} 
 }
 
-sub GetExons
+sub GetExons #Pulls out the coding regions from the middlelayer.pm search
 {
 	my $id = $_[0];
 	my $exons = ReadExons($id);
@@ -272,7 +275,7 @@ sub GetExons
 	return $exons;
 }
 
-sub RenderNucleotides
+sub RenderNucleotides #Render the set of tables for nucleotides, exons etc.
 {
 	my $id = $_[0];
 	my $dna = GetNucleotides($id);
@@ -298,13 +301,13 @@ sub RenderNucleotides
 	return $html;	
 }
 
-sub Percent
+sub Percent #simple routine to calculate a percentage
 {
 	my ($value, $total) = @_;
 	return (sprintf("%5.2f\%", $total == 0 ? 0 : 100.0*$value/$total)); 
 }
 
-sub GetFrequency
+sub GetFrequency #generates the codon frequency table from nucleotide and exon information
 {
 	my $id = $_[0];
 	my $dna = GetNucleotides($id);
@@ -357,14 +360,14 @@ sub GetFrequency
 	return $frequency;
 }
 
-sub GeneList
+sub GeneList #Pulls the summary list of genes from middlelayer, renders, passes complete html to page-generating subs
 {
 	my $genes = ReadGenes();
 	my $html = RenderTable($genes);
 	return $html;	
 }
 
-sub GetListByID
+sub GetListByID #Pulls the search results from the middlelayer, renders, passes comlete html to page-generating subs
 {
 	my $searchID = $_[0];
 	my $genes = ReadListByID($searchID);
@@ -372,7 +375,7 @@ sub GetListByID
 	return $html;	
 }
 
-sub GetListByN
+sub GetListByN #Pulls the search results from the middlelayer, renders, passes comlete html to page-generating subs
 {
 	my $searchN = $_[0];
 	my $genes = ReadListByN($searchN);
@@ -380,7 +383,7 @@ sub GetListByN
 	return $html;	
 }
 
-sub GetListByACC
+sub GetListByACC #Pulls the search results from the middlelayer, renders, passes comlete html to page-generating subs
 {
 	my $searchACC = $_[0];
 	my $genes = ReadListByACC($searchACC);
@@ -388,7 +391,7 @@ sub GetListByACC
 	return $html;	
 }
 
-sub GetListByLOC
+sub GetListByLOC #Pulls the search results from the middlelayer, renders, passes comlete html to page-generating subs
 {
 	my $searchLOC = $_[0];
 	my $genes = ReadListByLOC($searchLOC);
