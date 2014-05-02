@@ -283,9 +283,11 @@ sub RenderNucleotides #Render the set of tables for nucleotides, exons etc.
 	my $len = length($dna);
 	my $exons = ExtractExons($dna,GetExons($id));
 	my $translated = TranslateExons($exons);
+	my ($cut, $cutName) = CuttingSites($dna,ReadStickyEnds());
+	
 	# $exons =~ tr/ACGT./....E/;
 	my $html = "<table class='DNA'>";
-	$html .= "<tr><td><pre>Ruler</pre></td></tr><tr><td><pre>Nucleotide Sequence</pre></td></tr><tr><td><pre>Coding Regions</pre></td></tr><tr><td><pre>Amino Acid Sequence</pre></td></tr>";
+	$html .= "<tr><td><pre>Ruler</pre></td></tr><tr><td><pre>Nucleotide Sequence</pre></td></tr><tr><td><pre>Coding Regions</pre></td></tr><tr><td><pre>Amino Acid Sequence</pre></td></tr><tr><td><pre>Sticky end and cut position</pre></td><tr><td><pre>Sticky end type</pre></td>";
 	for (my $i=0; $i<$len; $i+=100) {
 		$html .= "<tr><td><pre></pre></td></tr>";
 		my $str = substr($ruler,$i,100);
@@ -295,6 +297,10 @@ sub RenderNucleotides #Render the set of tables for nucleotides, exons etc.
 		$str = substr($exons,$i,100);
 		$html .= "<tr><td><pre>$str</pre></td></tr>";
 		$str = substr($translated,$i,100);
+		$html .= "<tr><td><pre>$str</pre></td></tr>";
+		$str = substr($cut,$i,100);
+		$html .= "<tr><td><pre>$str</pre></td></tr>";
+		$str = substr($cutName,$i,100);
 		$html .= "<tr><td><pre>$str</pre></td></tr>";
 	}
 	$html .= "</table>";

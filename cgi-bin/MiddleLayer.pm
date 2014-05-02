@@ -22,6 +22,8 @@ BEGIN {
    		&ReadProteins
    		&ReadExons
    		&ReadNucleotides
+   		&ReadStickyEnds
+   		&CuttingSites
    		&TranslateDNA
    		&RemoveExons
 		&ExtractExons
@@ -65,6 +67,7 @@ my %db = %prodDB;
 # Codon translation map for DNA
 
 my (%CodonMap) = (
+	# the usual codons
 	'TCA'=>'S', #Serine
 	'TCC'=>'S', #Serine
 	'TCG'=>'S', #Serine
@@ -130,10 +133,12 @@ my (%CodonMap) = (
 	'GGG'=>'G', #Glycine
 	'GGT'=>'G', #Glycine
 	
+	# undefined codons
 	'XXX'=>'X', #undefined
-	'EEE'=>'X', #undefined$CodonMap{$codon}
+	'EEE'=>'X', #undefined
 	'...'=>'.', #undefined
 	
+	# incomplete codons
 	'A..'=>'X', #incomplete
 	'C..'=>'X', #incomplete
 	'G..'=>'X', #incomplete
@@ -156,6 +161,7 @@ my (%CodonMap) = (
 	'TT.'=>'X', #incomplete
 );
 
+# maps a codon to an amino acid based on the table above
 sub AminoAcid
 {
 	return $CodonMap{$_[0]};
@@ -369,6 +375,48 @@ sub ReadNucleotides
 	my $ref = $sqlQuery->fetchall_arrayref;
 	$dbh->disconnect();
 	return $ref;
+}
+
+#-----------------------------
+# read the sticky end
+# this simulated a database read
+# for future refactor into a database
+# at the moment it is hard coded
+# ideally should be from http://en.wikipedia.org/wiki/List_of_restriction_enzyme_cutting_sites
+#
+sub ReadStickyEnds
+{
+	my @stickyEnds = [
+		["EcoRI", "GAATTC", 1, "CTTAAG", 5],		
+		["BamHI", "GGATCC", 1, "CCTAGG", 5],		
+		["BsuMI", "CTCGAG", 1, "GAGCTC", 5],
+		["AsiSI","GCGATCGC",5, "CGCTAGCG",4],		
+	];
+	return @stickyEnds;
+}
+
+#---------------------------------------------
+# generate a ruler showing cutting sites for dna
+#
+sub CuttingSites
+{
+	my $dna = $_[0];
+	my $sites = $_[1];
+	my $result = " " x length($dna);	
+	my $annot = " " x length($dna);	
+	
+	foreach my $r (@{$sites}){
+		my ($name, $codeL, $posL, $codeR, $posR) = @{$r};
+		my $cut = "-" x length($codeL);
+		substr($cut, $posL-1, 2, "||");
+		my @matches;
+		while ($dna =~ m/\Q$codeL/g) {  # notice the quote meta
+			my $loc = $-[0];
+			substr($result, $loc, length($cut), $cut);
+			substr($annot,   $loc, length($name), $name);
+		}
+	}
+	return ($result, $annot);	
 }
 
 #-----------------------------
