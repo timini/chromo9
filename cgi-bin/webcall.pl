@@ -240,7 +240,7 @@ EOF
 sub RenderTable
 {
 	my $genes = $_[0];
-	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Locus</th>";
+	my $html = "<table><th>Gene ID</th><th>Name</th><th>Accession Number</th><th>Location</th>";
 	foreach my $row (@{$genes}) {
 		my ($ID, $N, $ACC, $LOC) = @{$row};
 	 	$html .= "<tr><td><a href='$cgiHome/webcall.pl?cmd=details&id=$ID'>$ID</a></td><td>$N</td><td>$ACC</td><td>$LOC</td></tr>";
