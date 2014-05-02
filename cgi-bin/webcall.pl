@@ -275,7 +275,7 @@ sub GetExons #Pulls out the coding regions from the middlelayer.pm search
 	return $exons;
 }
 
-sub RenderNucleotides #Render the set of tables for nucleotides, exons etc.
+sub RenderNucleotides #Render the set of tables for nucleotides, exons,cutting sites etc.
 {
 	my $id = $_[0];
 	my $dna = GetNucleotides($id);
@@ -284,7 +284,6 @@ sub RenderNucleotides #Render the set of tables for nucleotides, exons etc.
 	my $exons = ExtractExons($dna,GetExons($id));
 	my $translated = TranslateExons($exons);
 	my ($cut, $cutName) = CuttingSites($dna,ReadStickyEnds());
-	
 	# $exons =~ tr/ACGT./....E/;
 	my $html = "<table class='DNA'>";
 	$html .= "<tr><td><pre>Ruler</pre></td></tr><tr><td><pre>Nucleotide Sequence</pre></td></tr><tr><td><pre>Coding Regions</pre></td></tr><tr><td><pre>Amino Acid Sequence</pre></td></tr><tr><td><pre>Sticky end and cut position</pre></td><tr><td><pre>Sticky end type</pre></td>";
