@@ -397,7 +397,9 @@ sub ReadStickyEnds
 
 #---------------------------------------------
 # generate a ruler showing cutting sites for dna
-#
+# Params: DNA sequence string, array reference to cutting site data
+# Returns: two populated strings same length as the DNA, first contains
+# markers of where the cut and extent, and the other contains its name
 sub CuttingSites
 {
 	my $dna = $_[0];
@@ -405,10 +407,14 @@ sub CuttingSites
 	my $result = " " x length($dna);	
 	my $annot = " " x length($dna);	
 	
+	# for each cutting site 
 	foreach my $r (@{$sites}){
+		# get cutting site data
 		my ($name, $codeL, $posL, $codeR, $posR) = @{$r};
 		my $cut = "-" x length($codeL);
 		substr($cut, $posL-1, 2, "||");
+		
+		# match all codes and populate
 		my @matches;
 		while ($dna =~ m/\Q$codeL/g) {  # notice the quote meta
 			my $loc = $-[0];
@@ -424,7 +430,7 @@ sub CuttingSites
 # if codons are not multiple of 3
 # then set remainder to X
 #
-
+# Params: DNA sequence string, padding string
 sub TranslateDNA
 {
 	my $dna = $_[0];
@@ -450,10 +456,12 @@ sub TranslateDNA
 # some genes have overlapping exon entries in the 
 # database, this identifies all of them
 #
+# returns: array reference to all start/end exons that have a problem
 sub ReadGenesWithProblemExons 
 {
 	my @invalid = ();
 	my $genes = ReadGenes();
+	
 	foreach my $g (@{$genes}){
 		my $valid = 1;
 		my $geneId = $g->[0];
@@ -489,10 +497,13 @@ sub ExtractExons
 	my $len = length($dna);
 	my $exon_ref = $_[1];
 
+	# prepare empty result
 	my $result = '.' x length($dna);
 
 	# sort in reverse order to make life simpler	
 	@$exon_ref = sort {$b->[1] <=> $a->[1] || $b->[2] <=> $a->[2] } @$exon_ref;
+	
+	# for each exon region pipulate its nucleotides 
 	foreach my $r (@{$exon_ref}){
 		my ($xid, $xstart, $xend) = @{$r};
 		if ($xend > $len-1) {
@@ -513,6 +524,7 @@ sub TranslateExons
 	my $len = length($dna);
 	my $result = '.' x length($dna);
 	
+	# match all exon starts 
     my @matches;
     if (substr($dna,0,1) ne '.') {
     	push @matches, 1;
@@ -520,6 +532,8 @@ sub TranslateExons
     while ($dna =~ /\.[ACGT]/g) {
         push @matches, [ $+[0] ];
     }
+    
+    # for each exon start matched translate until a terminator is reached
 	foreach my $m (@matches) {
 		my $startLoc = $m->[0];
 		my $i = $startLoc-1;	
@@ -537,18 +551,15 @@ sub TranslateExons
 
 
 
-
-
-
-
 #--------------------------------------------
 # Calculate Frequencies of Coding Regions 
-#
+# returns: hash reference to codon frequencies
 sub CodonFrequencies
 {
 	my $dna = $_[0];
 	my $len = length($dna);
-	
+
+	# fill counts of valid codons includind stop codon	
 	my %codonUsage;
 	while (my ($key, $value) = each %CodonMap )
 	{
@@ -557,6 +568,7 @@ sub CodonFrequencies
 		}
 	}
 	
+	# match all exon starts 
     my @matches;
     if (substr($dna,0,1) ne '.') {
     	push @matches, 1;
@@ -564,6 +576,8 @@ sub CodonFrequencies
     while ($dna =~ /\.[ACGT]/g) {
         push @matches, [ $+[0] ];
     }
+    
+    # for each matched exon start, count frequency
 	foreach my $m (@matches) {
 		my $startLoc = $m->[0];
 		my $i = $startLoc-1;	
