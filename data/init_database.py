@@ -20,7 +20,6 @@ from settings import SETTINGS
 def main():
     records = parse()
     models, db_session = create_and_load_db()
-    import ipdb; ipdb.set_trace() ############################## Breakpoint ##############################
     load_to_db(records, models, db_session)
     choice = raw_input('Would you like to make a database dump? (y/n) :')
     if choice.strip() in ('y','Y','yes'):
